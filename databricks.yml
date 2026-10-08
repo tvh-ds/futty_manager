@@ -1,0 +1,41 @@
+bundle:
+  name: scout
+
+include:
+  - databricks/resources/*.yml
+
+variables:
+  catalog:
+    description: Existing Unity Catalog catalog (create with workspace administration).
+    default: workspace
+  schema:
+    description: Dedicated Scout schema; keep separate from other projects.
+    default: scout
+  volume:
+    description: Existing managed volume in the Scout schema.
+    default: exchange
+
+artifacts:
+  scout:
+    type: whl
+    path: .
+    build: uv build --wheel
+
+sync:
+  exclude:
+    - frontend/**
+    - data/**
+    - artifacts/**
+    - .cache/**
+    - .venv/**
+    - infra/**
+    - .env*
+
+targets:
+  dev:
+    default: true
+    mode: development
+  production:
+    mode: production
+    workspace:
+      root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}

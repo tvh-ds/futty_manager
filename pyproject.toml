@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "scout-engine"
+version = "1.0.0"
+description = "Evidence-aware football recruitment and reproducible data/ML pipelines"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "pydantic>=2.10,<3",
+  "pydantic-settings>=2.7,<3", "numpy>=1.26,<3", "scipy>=1.15,<2",
+  "scikit-learn>=1.6,<2", "sqlalchemy>=2.0,<3", "alembic>=1.14,<2",
+  "psycopg[binary]>=3.2,<4", "httpx>=0.28,<1", "typer>=0.15,<1",
+  "duckdb>=1.2,<2", "pyarrow>=19,<24", "PyYAML>=6.0.2,<7"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-cov>=6,<8", "ruff>=0.11,<1", "pip-audit>=2.8,<3"]
+lakehouse = ["pyspark>=3.5,<4", "delta-spark>=3.3,<4"]
+ml = ["mlflow>=3,<4", "catboost>=1.2,<2", "pandas>=2.2,<3", "socceraction>=1.5,<2", "multimethod>=1.10,<2"]
+dl = ["torch>=2.6,<3"]
+cloud = ["azure-identity>=1.20,<2", "azure-storage-blob>=12.24,<13", "azure-keyvault-secrets>=4.9,<5", "databricks-sdk>=0.50,<1", "azure-monitor-opentelemetry>=1.6,<2"]
+
+[project.scripts]
+scout = "scout.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/scout"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"Rating System/position_rating_weights_config.yaml" = "scout/position_rating_weights_config.yaml"
+
+[tool.uv]
+# socceraction pins lxml <5 for its legacy XML adapters. Scout uses its JSON
+# StatsBomb/SPADL/xT paths, tested with the patched parser. No XML intake exists.
+override-dependencies = ["lxml>=6.1,<7"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "B"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]

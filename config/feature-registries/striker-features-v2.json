@@ -1,0 +1,354 @@
+{
+  "feature_version": "striker-features-v2",
+  "weighting_version": "striker-weights-v2",
+  "features": [
+    {
+      "key": "npg90",
+      "label": "Non-penalty goals",
+      "numerator": "non_penalty_goals",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "npxg90",
+      "label": "Non-penalty xG",
+      "numerator": "npxg",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "finishing_delta90",
+      "label": "Goals above non-penalty xG",
+      "numerator": "finishing_delta",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "shots90",
+      "label": "Shots",
+      "numerator": "shots",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "sot90",
+      "label": "Shots on target",
+      "numerator": "shots_on_target",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "sot_pct",
+      "label": "Shots on target %",
+      "numerator": "shots_on_target",
+      "denominator": "shots",
+      "unit": "%",
+      "direction": 1
+    },
+    {
+      "key": "goals_per_shot",
+      "label": "Non-penalty goals / shot",
+      "numerator": "non_penalty_goals",
+      "denominator": "non_penalty_shots",
+      "unit": "ratio",
+      "direction": 1
+    },
+    {
+      "key": "npxg_per_shot",
+      "label": "Non-penalty xG / shot",
+      "numerator": "npxg",
+      "denominator": "non_penalty_shots",
+      "unit": "xG/shot",
+      "direction": 1
+    },
+    {
+      "key": "box_shots90",
+      "label": "Shots inside the box",
+      "numerator": "shots_inside_box",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "open_xg90",
+      "label": "Open-play xG",
+      "numerator": "open_play_xg",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "headed_shots90",
+      "label": "Headed shots",
+      "numerator": "headed_shots",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "box_touches90",
+      "label": "Opposition box touches",
+      "numerator": "touches_opposition_box",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "offsides90",
+      "label": "Offsides (context only)",
+      "numerator": "offsides",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 0
+    },
+    {
+      "key": "assists90",
+      "label": "Assists",
+      "numerator": "assists",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "xa90",
+      "label": "Expected assists",
+      "numerator": "xa",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "key_passes90",
+      "label": "Key passes",
+      "numerator": "key_passes",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "sca90",
+      "label": "Shot-creating actions",
+      "numerator": "sca",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "ppa90",
+      "label": "Passes into penalty area",
+      "numerator": "passes_into_penalty_area",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "through_balls90",
+      "label": "Through balls",
+      "numerator": "through_balls",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "pass_pct",
+      "label": "Pass completion %",
+      "numerator": "passes_completed",
+      "denominator": "passes_attempted",
+      "unit": "%",
+      "direction": 1
+    },
+    {
+      "key": "take_ons90",
+      "label": "Take-ons attempted",
+      "numerator": "take_ons_attempted",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "successful_take_ons90",
+      "label": "Successful take-ons",
+      "numerator": "take_ons_successful",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "take_on_pct",
+      "label": "Take-on success %",
+      "numerator": "take_ons_successful",
+      "denominator": "take_ons_attempted",
+      "unit": "%",
+      "direction": 1
+    },
+    {
+      "key": "box_carries90",
+      "label": "Carries into penalty area",
+      "numerator": "carries_into_penalty_area",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "third_carries90",
+      "label": "Carries into final third",
+      "numerator": "carries_into_final_third",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "carry_distance90",
+      "label": "Progressive carry distance",
+      "numerator": "progressive_carry_distance",
+      "denominator": "minutes",
+      "unit": "metres/90",
+      "direction": 1
+    },
+    {
+      "key": "miscontrols90",
+      "label": "Miscontrols",
+      "numerator": "miscontrols",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": -1
+    },
+    {
+      "key": "dispossessed90",
+      "label": "Dispossessed",
+      "numerator": "dispossessed",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": -1
+    },
+    {
+      "key": "duels_won90",
+      "label": "Duels won",
+      "numerator": "duels_won",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "duel_pct",
+      "label": "Duel success %",
+      "numerator": "duels_won",
+      "denominator": "duels_attempted",
+      "unit": "%",
+      "direction": 1
+    },
+    {
+      "key": "aerials_won90",
+      "label": "Aerial duels won",
+      "numerator": "aerial_duels_won",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "aerial_pct",
+      "label": "Aerial success %",
+      "numerator": "aerial_duels_won",
+      "denominator": "aerial_duels_attempted",
+      "unit": "%",
+      "direction": 1
+    },
+    {
+      "key": "fouls_won90",
+      "label": "Fouls won",
+      "numerator": "fouls_won",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "interceptions90",
+      "label": "Interceptions",
+      "numerator": "interceptions",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "recoveries90",
+      "label": "Recoveries",
+      "numerator": "recoveries",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    },
+    {
+      "key": "blocks90",
+      "label": "Blocks",
+      "numerator": "blocks",
+      "denominator": "minutes",
+      "unit": "per90",
+      "direction": 1
+    }
+  ],
+  "abilities": {
+    "Finishing": {
+      "npg90": 0.2,
+      "npxg90": 0.18,
+      "finishing_delta90": 0.14,
+      "shots90": 0.08,
+      "sot90": 0.1,
+      "sot_pct": 0.1,
+      "goals_per_shot": 0.1,
+      "npxg_per_shot": 0.1
+    },
+    "Box Threat": {
+      "box_shots90": 0.24,
+      "open_xg90": 0.28,
+      "headed_shots90": 0.1,
+      "box_touches90": 0.28,
+      "offsides90": 0.1
+    },
+    "Link-Up / Creation": {
+      "assists90": 0.12,
+      "xa90": 0.22,
+      "key_passes90": 0.18,
+      "sca90": 0.18,
+      "ppa90": 0.12,
+      "through_balls90": 0.08,
+      "pass_pct": 0.1
+    },
+    "Carrying / 1v1": {
+      "take_ons90": 0.08,
+      "successful_take_ons90": 0.18,
+      "take_on_pct": 0.16,
+      "box_carries90": 0.2,
+      "third_carries90": 0.12,
+      "carry_distance90": 0.1,
+      "miscontrols90": 0.08,
+      "dispossessed90": 0.08
+    },
+    "Physicality": {
+      "duels_won90": 0.24,
+      "duel_pct": 0.24,
+      "aerials_won90": 0.18,
+      "aerial_pct": 0.18,
+      "fouls_won90": 0.1,
+      "dispossessed90": 0.06
+    },
+    "Defensive Activity": {
+      "interceptions90": 0.23076923076923078,
+      "recoveries90": 0.5384615384615384,
+      "blocks90": 0.23076923076923078
+    }
+  },
+  "st_weights": {
+    "Finishing": 0.27,
+    "Box Threat": 0.2,
+    "Link-Up / Creation": 0.17,
+    "Carrying / 1v1": 0.14,
+    "Physicality": 0.12,
+    "Defensive Activity": 0.1
+  },
+  "revision": "User approved attacking-third tackle removal; remaining Defensive Activity weights normalized in their original 15:35:15 ratio."
+}

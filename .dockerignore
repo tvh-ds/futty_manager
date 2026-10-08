@@ -1,0 +1,12 @@
+.venv
+.cache
+.git
+.env*
+data
+artifacts
+frontend/node_modules
+frontend/dist
+.impeccable
+mlruns
+__pycache__
+*.tfstate*

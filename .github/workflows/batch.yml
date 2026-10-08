@@ -1,0 +1,51 @@
+name: Configured Databricks release batch
+on:
+  workflow_dispatch:
+    inputs:
+      release_id:
+        description: Immutable release identifier already uploaded to the managed input volume
+        required: true
+permissions:
+  contents: read
+jobs:
+  batch:
+    if: vars.DATABRICKS_ENABLED == 'true'
+    environment: batch
+    runs-on: ubuntu-latest
+    env:
+      DATABRICKS_HOST: ${{ vars.DATABRICKS_HOST }}
+      DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+      BUNDLE_VAR_catalog: ${{ vars.DATABRICKS_CATALOG }}
+      BUNDLE_VAR_schema: ${{ vars.DATABRICKS_SCHEMA }}
+      BUNDLE_VAR_volume: ${{ vars.DATABRICKS_VOLUME }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.9.5'
+      - uses: databricks/setup-cli@v0.281.0
+        with:
+          version: '0.281.0'
+      - run: databricks bundle validate --target production
+      - run: databricks bundle deploy --target production
+      - name: Execute finite serverless batch
+        env:
+          RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          [[ "$RELEASE_ID" =~ ^[A-Za-z0-9_-]{1,100}$ ]] || exit 1
+          databricks bundle run release --target production --params "release_id=$RELEASE_ID"
+      - run: uv sync --frozen --extra cloud --python 3.12
+      - name: Export managed-volume bundle through CI runner
+        env:
+          RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          VOLUME="/Volumes/$BUNDLE_VAR_catalog/$BUNDLE_VAR_schema/$BUNDLE_VAR_volume/output/$RELEASE_ID"
+          uv run scout cloud-transfer "artifacts/batch/$RELEASE_ID/bundle.json" "$VOLUME/bundle.json" --download
+          uv run scout cloud-transfer "artifacts/batch/$RELEASE_ID/sha256.txt" "$VOLUME/sha256.txt" --download
+          uv run scout cloud-transfer "artifacts/batch/$RELEASE_ID/evaluation.json" "$VOLUME/evaluation.json" --download
+          uv run python -c 'import os; from pathlib import Path; from scout.releases import read_bundle; read_bundle(Path("artifacts/batch") / os.environ["RELEASE_ID"] / "bundle.json")'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validated-batch-release
+          path: artifacts/batch
+          retention-days: 7

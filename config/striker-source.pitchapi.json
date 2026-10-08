@@ -1,0 +1,10 @@
+{
+  "provider": "pitchapi",
+  "enabled": true,
+  "season": 2025,
+  "publication_approved": true,
+  "observed_through": "2026-07-01T00:00:00Z",
+  "max_requests": 6000,
+  "identities": {},
+  "notes": "User confirmed free access and reuse rights. Completed 2025/26 performance only; July 1 is the frozen season-window boundary. Full match inventories and explicitly reviewed striker/team identities are required. Missing metrics and inferred source definitions remain visible. This opt-in local config does not enable cloud deployment."
+}

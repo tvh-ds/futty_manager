@@ -1,0 +1,1362 @@
+# Editable position rating weights. Values are fractions; each level must sum to 1.
+# Rebuild with: .venv/Scripts/python.exe -m scout.cli build-player-catalogue
+# Only unrecorded_zero features redistribute weight. Recorded zeros keep weight.
+version: position-weights-v1-20261008
+season: 2025/26
+minimum_minutes: 900
+minimum_peers: 30
+features:
+  npg90:
+    label: Non-penalty goals
+    numerator: non_penalty_goals
+    denominator: minutes
+    unit: per90
+    direction: 1
+  npxg90:
+    label: Non-penalty xG
+    numerator: npxg
+    denominator: minutes
+    unit: per90
+    direction: 1
+  finishing_delta90:
+    label: Goals above non-penalty xG
+    numerator: finishing_delta
+    denominator: minutes
+    unit: per90
+    direction: 1
+  shots90:
+    label: Shots
+    numerator: shots
+    denominator: minutes
+    unit: per90
+    direction: 1
+  sot90:
+    label: Shots on target
+    numerator: shots_on_target
+    denominator: minutes
+    unit: per90
+    direction: 1
+  sot_pct:
+    label: Shots on target %
+    numerator: shots_on_target
+    denominator: shots
+    unit: '%'
+    direction: 1
+  goals_per_shot:
+    label: Non-penalty goals / shot
+    numerator: non_penalty_goals
+    denominator: non_penalty_shots
+    unit: ratio
+    direction: 1
+  npxg_per_shot:
+    label: Non-penalty xG / shot
+    numerator: npxg
+    denominator: non_penalty_shots
+    unit: xG/shot
+    direction: 1
+  box_shots90:
+    label: Shots inside the box
+    numerator: shots_inside_box
+    denominator: minutes
+    unit: per90
+    direction: 1
+  open_xg90:
+    label: Open-play xG
+    numerator: open_play_xg
+    denominator: minutes
+    unit: per90
+    direction: 1
+  headed_shots90:
+    label: Headed shots
+    numerator: headed_shots
+    denominator: minutes
+    unit: per90
+    direction: 1
+  box_touches90:
+    label: Opposition box touches
+    numerator: touches_opposition_box
+    denominator: minutes
+    unit: per90
+    direction: 1
+  offsides90:
+    label: Offsides (context only)
+    numerator: offsides
+    denominator: minutes
+    unit: per90
+    direction: 0
+  assists90:
+    label: Assists
+    numerator: assists
+    denominator: minutes
+    unit: per90
+    direction: 1
+  xa90:
+    label: Expected assists
+    numerator: xa
+    denominator: minutes
+    unit: per90
+    direction: 1
+  key_passes90:
+    label: Key passes
+    numerator: key_passes
+    denominator: minutes
+    unit: per90
+    direction: 1
+  sca90:
+    label: Shot-creating actions
+    numerator: sca
+    denominator: minutes
+    unit: per90
+    direction: 1
+  ppa90:
+    label: Passes into penalty area
+    numerator: passes_into_penalty_area
+    denominator: minutes
+    unit: per90
+    direction: 1
+  through_balls90:
+    label: Through balls
+    numerator: through_balls
+    denominator: minutes
+    unit: per90
+    direction: 1
+  pass_pct:
+    label: Pass completion %
+    numerator: passes_completed
+    denominator: passes_attempted
+    unit: '%'
+    direction: 1
+  take_ons90:
+    label: Take-ons attempted
+    numerator: take_ons_attempted
+    denominator: minutes
+    unit: per90
+    direction: 1
+  successful_take_ons90:
+    label: Successful take-ons
+    numerator: take_ons_successful
+    denominator: minutes
+    unit: per90
+    direction: 1
+  take_on_pct:
+    label: Take-on success %
+    numerator: take_ons_successful
+    denominator: take_ons_attempted
+    unit: '%'
+    direction: 1
+  box_carries90:
+    label: Carries into penalty area
+    numerator: carries_into_penalty_area
+    denominator: minutes
+    unit: per90
+    direction: 1
+  third_carries90:
+    label: Carries into final third
+    numerator: carries_into_final_third
+    denominator: minutes
+    unit: per90
+    direction: 1
+  carry_distance90:
+    label: Progressive carry distance
+    numerator: progressive_carry_distance
+    denominator: minutes
+    unit: metres/90
+    direction: 1
+  miscontrols90:
+    label: Miscontrols
+    numerator: miscontrols
+    denominator: minutes
+    unit: per90
+    direction: -1
+  dispossessed90:
+    label: Dispossessed
+    numerator: dispossessed
+    denominator: minutes
+    unit: per90
+    direction: -1
+  duels_won90:
+    label: Duels won
+    numerator: duels_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+  duel_pct:
+    label: Duel success %
+    numerator: duels_won
+    denominator: duels_attempted
+    unit: '%'
+    direction: 1
+  aerials_won90:
+    label: Aerial duels won
+    numerator: aerial_duels_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+  aerial_pct:
+    label: Aerial success %
+    numerator: aerial_duels_won
+    denominator: aerial_duels_attempted
+    unit: '%'
+    direction: 1
+  fouls_won90:
+    label: Fouls won
+    numerator: fouls_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+  interceptions90:
+    label: Interceptions
+    numerator: interceptions
+    denominator: minutes
+    unit: per90
+    direction: 1
+  recoveries90:
+    label: Recoveries
+    numerator: recoveries
+    denominator: minutes
+    unit: per90
+    direction: 1
+  blocks90:
+    label: Blocks
+    numerator: blocks
+    denominator: minutes
+    unit: per90
+    direction: 1
+  pos_npg:
+    label: Non-penalty goals /90
+    numerator: np_goals
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - np_goals
+    scope: aggregate
+    formula: 90 × np_goals / minutes
+    note: 'Realized scoring; noisy at low shot exposure. Compatible alternatives:
+      PitchAPI non_penalty_goals; Understat npg.'
+  pos_npxg:
+    label: Non-penalty xG /90
+    numerator: np_xg
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - np_xg
+    scope: aggregate
+    formula: 90 × np_xg / minutes
+    note: 'Chance production, not pure finishing technique. Alternatives: PitchAPI
+      npxg; Understat npxG, with their own model definitions.'
+  pos_finish:
+    label: Goals above non-penalty xG /90
+    numerator: np_goals_vs_xg
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - np_goals_vs_xg
+    scope: aggregate
+    formula: 90 × np_goals_vs_xg / minutes
+    note: Signed residual; shrink strongly. Validate against same-provider np_goals
+      − np_xg.
+  pos_npsot:
+    label: Non-penalty shots on target /90
+    numerator: np_shots_on_target
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - np_shots_on_target
+    scope: aggregate
+    formula: 90 × np_shots_on_target / minutes
+    note: Shot production; do not substitute all-shot on-target totals without preserving
+      the different scope.
+  pos_accuracy:
+    label: Non-penalty on-target share
+    numerator: np_shots_on_target
+    denominator: np_shots
+    unit: '%'
+    direction: 1
+    inputs:
+    - np_shots_on_target
+    - np_shots
+    scope: aggregate
+    formula: 100 × np_shots_on_target / np_shots
+    note: Uses all non-penalty attempts consistently, including blocked attempts.
+      This is a Scout ratio, not Opta shooting accuracy, which excludes blocked shots.
+  pos_xgshot:
+    label: Non-penalty xG / shot
+    numerator: np_xg
+    denominator: np_shots
+    unit: '%'
+    direction: 1
+    inputs:
+    - np_xg
+    - np_shots
+    scope: aggregate
+    formula: np_xg / np_shots
+    note: Shot selection/opportunity quality; not shot power. Recalculate from the
+      same provider, rather than assume a published ratio uses identical attempts.
+  pos_boxshots:
+    label: Shots inside box /90
+    numerator: shots_inside_box
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - shots_inside_box
+    scope: aggregate
+    formula: 90 × shots_inside_box / minutes
+    note: PitchAPI aggregate; verify shot scope and complete match coverage.
+  pos_boxtouch:
+    label: Opposition box touches /90
+    numerator: touches_opposition_box
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - touches_opposition_box
+    scope: aggregate
+    formula: 90 × touches_opposition_box / minutes
+    note: Box involvement proxy, not tracking-based off-ball movement.
+  pos_opxg:
+    label: Open-play xG /90
+    numerator: open_play_xg
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - open_play_xg
+    scope: aggregate
+    formula: 90 × open_play_xg / minutes
+    note: PitchAPI open-play shot context; not interchangeable with non-penalty xG
+      including set pieces.
+  pos_opxa:
+    label: Open-play xA /90
+    numerator: op_xa
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - op_xa
+    scope: aggregate
+    formula: 90 × op_xa / minutes
+    note: Open-play creation reduces set-piece responsibility bias. Total xa/xA is
+      a separately labelled fallback, not an identical feature.
+  pos_opkp:
+    label: Open-play chances created /90
+    numerator: op_chances_created
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - op_chances_created
+    scope: aggregate
+    formula: 90 × op_chances_created / minutes
+    note: Opta chance-creation definition; do not silently equate with every provider
+      key_passes.
+  pos_assist:
+    label: Open-play assists /90
+    numerator: op_assists
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - op_assists
+    scope: aggregate
+    formula: 90 × op_assists / minutes
+    note: Realized creation with teammate finishing noise; keep a modest share.
+  pos_sca:
+    label: Shot-creating actions /90
+    numerator: sca
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - sca
+    scope: aggregate
+    formula: 90 × sca / minutes
+    note: PitchAPI SCA definition must be retained; includes overlapping creation
+      signals and potentially dead-ball actions.
+  pos_ppa:
+    label: Passes into penalty area /90
+    numerator: passes_into_penalty_area
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - passes_into_penalty_area
+    scope: aggregate
+    formula: 90 × passes_into_penalty_area / minutes
+    note: Spatial delivery; establish completion/cross-inclusion contract before activation.
+  pos_through:
+    label: Successful through balls /90
+    numerator: successful_through_balls
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - successful_through_balls
+    scope: aggregate
+    formula: 90 × successful_through_balls / minutes
+    note: Prefer successful deliveries to attempted-volume alone.
+  pos_cross:
+    label: Successful open-play crosses /90
+    numerator: successful_op_crosses
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - successful_op_crosses
+    scope: aggregate
+    formula: 90 × successful_op_crosses / minutes
+    note: Open-play delivery; opportunity and target-player context matter.
+  pos_crosspct:
+    label: Open-play cross completion
+    numerator: successful_op_crosses
+    denominator: op_crosses
+    unit: '%'
+    direction: 1
+    inputs:
+    - successful_op_crosses
+    - op_crosses
+    scope: aggregate
+    formula: 100 × successful_op_crosses / op_crosses
+    note: Same-provider open-play counts; do not combine an all-cross cross_perc with
+      open-play attempts.
+  pos_dribble:
+    label: Successful take-ons /90
+    numerator: take_ons_successful
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - take_ons_successful
+    scope: aggregate
+    formula: 90 × take_ons_successful / minutes
+    note: On-ball opponent beating, not sprint speed.
+  pos_dribblepct:
+    label: Take-on success
+    numerator: take_ons_successful
+    denominator: take_ons_attempted
+    unit: '%'
+    direction: 1
+    inputs:
+    - take_ons_successful
+    - take_ons_attempted
+    scope: aggregate
+    formula: 100 × take_ons_successful / take_ons_attempted
+    note: Shrink using take-on attempts; zero attempts produce N/A.
+  pos_carrybox:
+    label: Carries into penalty area /90
+    numerator: carries_into_penalty_area
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - carries_into_penalty_area
+    scope: aggregate
+    formula: 90 × carries_into_penalty_area / minutes
+    note: Territorial carrying; overlaps successful take-ons only partially.
+  pos_carrythird:
+    label: Carries into final third /90
+    numerator: carries_into_final_third
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - carries_into_final_third
+    scope: aggregate
+    formula: 90 × carries_into_final_third / minutes
+    note: Field advancement; not proof of beating a defensive line.
+  pos_progcarry:
+    label: Progressive carries /90
+    numerator: progressive_carries
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - progressive_carries
+    scope: aggregate
+    formula: 90 × progressive_carries / minutes
+    note: Opta progressive-carry criterion; preserve definition/version.
+  pos_progdist:
+    label: Progressive carry distance /90
+    numerator: progressive_distance
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - progressive_distance
+    scope: aggregate
+    formula: 90 × progressive_distance / minutes
+    note: Opta carries.overall.progressive_distance, not progressive passing distance.
+      Signed observations are retained; do not force absolute values. PitchAPI progressive_carry_distance
+      is not automatically equivalent.
+  pos_passpct:
+    label: Pass completion
+    numerator: successful_passes
+    denominator: passes
+    unit: '%'
+    direction: 1
+    inputs:
+    - successful_passes
+    - passes
+    scope: aggregate
+    formula: 100 × successful_passes / passes
+    note: Same-provider denominator. Ordinary completion is a limited retention proxy,
+      not vision or pressured-pass quality.
+  pos_passvolume:
+    label: Successful passes /90
+    numerator: successful_passes
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - successful_passes
+    scope: aggregate
+    formula: 90 × successful_passes / minutes
+    note: Small-weight circulation activity; heavily team-style dependent.
+  pos_ftpass:
+    label: Successful final-third passes /90
+    numerator: successful_final_third_passes
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - successful_final_third_passes
+    scope: aggregate
+    formula: 90 × successful_final_third_passes / minutes
+    note: Provider final-third passing category. Do not rename as progressive passes
+      or entries until start/end-zone semantics are verified.
+  pos_ftpct:
+    label: Final-third pass completion
+    numerator: successful_final_third_passes
+    denominator: total_final_third_passes
+    unit: '%'
+    direction: 1
+    inputs:
+    - successful_final_third_passes
+    - total_final_third_passes
+    scope: aggregate
+    formula: 100 × successful_final_third_passes / total_final_third_passes
+    note: Completion within the same provider category; no pressure inference.
+  pos_buildup:
+    label: xGBuildup /90
+    numerator: xGBuildup
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - xGBuildup
+    scope: aggregate
+    formula: 90 × xGBuildup / Understat time
+    note: Understat possession-chain involvement before shot/assist; team-dependent,
+      private-use evidence, not OBV or xT.
+  pos_mis:
+    label: Miscontrols /90
+    numerator: miscontrols
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - miscontrols
+    scope: aggregate
+    formula: 90 × miscontrols / minutes
+    note: Recorded control losses; low counts can also reflect limited receiving responsibility.
+  pos_dis:
+    label: Dispossessed /90
+    numerator: dispossessed
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - dispossessed
+    scope: aggregate
+    formula: 90 × dispossessed / minutes
+    note: Loss while in possession; use carrying/role context and do not infer pressure
+      resistance directly.
+  pos_tackle:
+    label: Tackles /90
+    numerator: tackles
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - tackles
+    scope: aggregate
+    formula: 90 × tackles / minutes
+    note: Activity proxy. Opta tackles include won/lost possession outcomes; not attempted
+      challenges or tackle success.
+  pos_intercept:
+    label: Interceptions /90
+    numerator: interceptions
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - interceptions
+    scope: aggregate
+    formula: 90 × interceptions / minutes
+    note: Reading/action activity; opportunities depend on opposition possession.
+  pos_recover:
+    label: Recoveries /90
+    numerator: recoveries
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - recoveries
+    scope: aggregate
+    formula: 90 × recoveries / minutes
+    note: Ball recovery activity; not a measured pressing-success rate.
+  pos_block:
+    label: Shot blocks /90
+    numerator: blocks
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - blocks
+    scope: aggregate
+    formula: 90 × blocks / minutes
+    note: Use Opta shot-block scope. A fallback must confirm the same definition;
+      do not assume blocked passes/crosses are equivalent.
+  pos_clear:
+    label: Clearances /90
+    numerator: clearances
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - clearances
+    scope: aggregate
+    formula: 90 × clearances / minutes
+    note: Emergency/box intervention volume; low-block context can inflate it, so
+      its weight is limited.
+  pos_ground:
+    label: Ground duels won /90
+    numerator: ground_duels_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - ground_duels_won
+    scope: aggregate
+    formula: 90 × ground_duels_won / minutes
+    note: Opta ground duels are broad contests, not exclusively defensive 1v1 challenges.
+  pos_groundpct:
+    label: Ground duel win share
+    numerator: ground_duels_won
+    denominator: ground_duels
+    unit: '%'
+    direction: 1
+    inputs:
+    - ground_duels_won
+    - ground_duels
+    scope: aggregate
+    formula: 100 × ground_duels_won / ground_duels
+    note: Pair matched outcomes/attempts from Opta. This is not tackle/dribbled-past
+      success.
+  pos_aerial:
+    label: Aerial duels won /90
+    numerator: aerial_duels_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - aerial_duels_won
+    scope: aggregate
+    formula: 90 × aerial_duels_won / minutes
+    note: Successful aerial involvement; height itself is excluded.
+  pos_aerialpct:
+    label: Aerial duel win share
+    numerator: aerial_duels_won
+    denominator: aerial_duels
+    unit: '%'
+    direction: 1
+    inputs:
+    - aerial_duels_won
+    - aerial_duels
+    scope: aggregate
+    formula: 100 × aerial_duels_won / aerial_duels
+    note: Use Opta pair. PitchAPI fallback uses aerial_duels_won / (aerial_duels_won
+      + aerial_duels_lost), with its own minutes.
+  pos_foul:
+    label: Fouls committed /90
+    numerator: fouls_commited
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - fouls_commited
+    scope: aggregate
+    formula: 90 × fouls_commited / minutes
+    note: Native spelling retained. Tactical foul context and referee effects require
+      caution.
+  pos_pen:
+    label: Penalties conceded /90
+    numerator: pens_conceded
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - pens_conceded
+    scope: aggregate
+    formula: 90 × pens_conceded / minutes
+    note: Rare damaging events; not goalkeeping penalty-save ability.
+  pos_yellow:
+    label: Yellow cards /90
+    numerator: yellows
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - yellows
+    scope: aggregate
+    formula: 90 × yellows / minutes
+    note: Discipline proxy; do not imply aggression or effort is intrinsically bad.
+  pos_red:
+    label: Red cards /90
+    numerator: reds
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - reds
+    scope: aggregate
+    formula: 90 × reds / minutes
+    note: Rare events; heavy stabilization and review of second-yellow semantics required.
+  pos_prevent:
+    label: Goals prevented /90
+    numerator: goals_prevented
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - goals_prevented
+    scope: aggregate
+    formula: 90 × goals_prevented / keeper minutes
+    note: Opta signed shot-stopping residual; confirm xGOT, own-goal and penalty conventions.
+      Do not replace with raw conceded goals.
+  pos_savepct:
+    label: Save percentage
+    numerator: save_perc
+    denominator: attempts
+    unit: '%'
+    direction: 1
+    inputs:
+    - save_perc
+    scope: aggregate
+    formula: Use provider save_perc; validate its attempts contract
+    note: Less chance-adjusted than goals prevented; includes shot-difficulty and
+      team effects.
+  pos_claimpct:
+    label: Claim success
+    numerator: advanced.goalkeeping.claims_won
+    denominator: advanced.goalkeeping.claims
+    unit: '%'
+    direction: 1
+    inputs:
+    - advanced.goalkeeping.claims_won
+    - advanced.goalkeeping.claims
+    scope: appearance
+    formula: 100 × Σclaims_won / Σclaims
+    note: Claim attempts and successful outcomes; not crosses-claimed/opponent-crosses
+      unless the provider establishes that denominator.
+  pos_claim90:
+    label: Successful claims /90
+    numerator: advanced.goalkeeping.claims_won
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - advanced.goalkeeping.claims_won
+    scope: appearance
+    formula: 90 × Σclaims_won / matched keeper minutes
+    note: Activity proxy, not chance-adjusted command of area. Do not add stats.keeper_high_claim
+      to overlapping claims_won.
+  pos_sweep90:
+    label: Sweeper actions /90
+    numerator: advanced.goalkeeping.sweeper_actions
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - advanced.goalkeeping.sweeper_actions
+    scope: appearance
+    formula: 90 × Σsweeper_actions / matched keeper minutes
+    note: Outside-goal intervention activity; higher frequency does not establish
+      safer decision-making.
+  pos_gkclear:
+    label: Keeper clearances /90
+    numerator: stats.clearances.value
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - stats.clearances.value
+    scope: appearance
+    formula: 90 × Σkeeper clearances / matched keeper minutes
+    note: Only verified GK appearances. Not automatically outside-area clearances;
+      context and location needed.
+  pos_gkinter:
+    label: Keeper interceptions /90
+    numerator: stats.interceptions.value
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - stats.interceptions.value
+    scope: appearance
+    formula: 90 × Σkeeper interceptions / matched keeper minutes
+    note: Only verified GK appearances; broad intervention proxy, not exact sweeping
+      quality.
+  pos_distpct:
+    label: Distribution completion
+    numerator: advanced.goalkeeping.distribution_accuracy
+    denominator: advanced.goalkeeping.distributions
+    unit: '%'
+    direction: 1
+    inputs:
+    - advanced.goalkeeping.distribution_accuracy
+    - advanced.goalkeeping.distributions
+    scope: appearance
+    formula: Σ(match accuracy × distributions) / Σdistributions, after verifying percentage
+      unit
+    note: Weighted completion, never mean of match percentages. Recover exact numerator
+      where available; rounded percentages can only give an approximate aggregate.
+  pos_gkpasspct:
+    label: Pass completion
+    numerator: stats.accurate_passes.value
+    denominator: stats.accurate_passes.total
+    unit: '%'
+    direction: 1
+    inputs:
+    - stats.accurate_passes.value
+    - stats.accurate_passes.total
+    scope: appearance
+    formula: 100 × Σaccurate_passes.value / Σaccurate_passes.total
+    note: Keeper-specific appearances; use common match window and verify numerator/denominator
+      metadata.
+  pos_gkpass90:
+    label: Successful passes /90
+    numerator: stats.accurate_passes.value
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - stats.accurate_passes.value
+    scope: appearance
+    formula: 90 × Σaccurate_passes.value / matched keeper minutes
+    note: Small style-dependent build-up involvement signal, not a pure quality measure.
+  pos_longpct:
+    label: Long-ball completion
+    numerator: stats.long_balls_accurate.value
+    denominator: stats.long_balls_accurate.total
+    unit: '%'
+    direction: 1
+    inputs:
+    - stats.long_balls_accurate.value
+    - stats.long_balls_accurate.total
+    scope: appearance
+    formula: 100 × Σaccurate long balls / Σattempted long balls
+    note: Keeper-only appearances. No claim that launch_pct measures accuracy; launch_pct
+      measures propensity.
+  pos_long90:
+    label: Accurate long balls /90
+    numerator: stats.long_balls_accurate.value
+    denominator: minutes
+    unit: per90
+    direction: 1
+    inputs:
+    - stats.long_balls_accurate.value
+    scope: appearance
+    formula: 90 × Σaccurate long balls / matched keeper minutes
+    note: Successful long distribution volume; tactical responsibility strongly affects
+      opportunities.
+  pos_gkmis:
+    label: Keeper miscontrols /90
+    numerator: advanced.carrying.miscontrols
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - advanced.carrying.miscontrols
+    scope: appearance
+    formula: 90 × Σkeeper miscontrols / matched keeper minutes
+    note: Rare control-loss signal; absence of pressure exposure limits interpretation.
+  pos_gkdis:
+    label: Keeper dispossessions /90
+    numerator: advanced.carrying.dispossessed
+    denominator: minutes
+    unit: per90
+    direction: -1
+    inputs:
+    - advanced.carrying.dispossessed
+    scope: appearance
+    formula: 90 × Σkeeper dispossessed / matched keeper minutes
+    note: Rare on-ball loss; only complete known windows support zero-event interpretation.
+positions:
+  ST:
+    label: ST
+    abilities:
+    - name: Finishing
+      abbreviation: FIN
+      overall_weight: 0.27
+      features:
+        npg90: 0.16176470588235295
+        npxg90: 0.15
+        finishing_delta90: 0.3
+        shots90: 0.06470588235294118
+        sot90: 0.08088235294117647
+        sot_pct: 0.08088235294117647
+        goals_per_shot: 0.08088235294117647
+        npxg_per_shot: 0.08088235294117647
+    - name: Box Threat
+      abbreviation: BOX
+      overall_weight: 0.2
+      features:
+        box_shots90: 0.24
+        open_xg90: 0.28
+        headed_shots90: 0.1
+        box_touches90: 0.28
+        offsides90: 0.1
+    - name: Link-Up / Creation
+      abbreviation: LNK
+      overall_weight: 0.17
+      features:
+        assists90: 0.12
+        xa90: 0.22
+        key_passes90: 0.2
+        sca90: 0.18
+        ppa90: 0.12
+        through_balls90: 0.08
+        pass_pct: 0.08
+    - name: Carrying / 1v1
+      abbreviation: CAR
+      overall_weight: 0.14
+      features:
+        take_ons90: 0.08
+        successful_take_ons90: 0.14
+        take_on_pct: 0.2
+        box_carries90: 0.2
+        third_carries90: 0.12
+        carry_distance90: 0.1
+        miscontrols90: 0.08
+        dispossessed90: 0.08
+    - name: Physicality
+      abbreviation: PHY
+      overall_weight: 0.12
+      features:
+        duels_won90: 0.1
+        duel_pct: 0.3
+        aerials_won90: 0.1
+        aerial_pct: 0.25
+        dispossessed90: 0.25
+    - name: Defensive Activity
+      abbreviation: DEF
+      overall_weight: 0.1
+      features:
+        interceptions90: 0.23076923076923078
+        recoveries90: 0.5384615384615384
+        blocks90: 0.23076923076923078
+  LW_RW:
+    label: LW / RW
+    abilities:
+    - name: Carrying / 1v1
+      abbreviation: CAR
+      overall_weight: 0.24
+      features:
+        pos_dribble: 0.3
+        pos_dribblepct: 0.2
+        pos_carrybox: 0.25
+        pos_carrythird: 0.15
+        pos_progdist: 0.1
+    - name: Chance Creation
+      abbreviation: CRE
+      overall_weight: 0.22
+      features:
+        pos_opxa: 0.3
+        pos_opkp: 0.25
+        pos_ppa: 0.2
+        pos_cross: 0.1
+        pos_through: 0.15
+    - name: Scoring
+      abbreviation: SCO
+      overall_weight: 0.2
+      features:
+        pos_npg: 0.25
+        pos_npxg: 0.15
+        pos_finish: 0.3
+        pos_npsot: 0.15
+        pos_accuracy: 0.15
+    - name: Penalty-Area Threat
+      abbreviation: BOX
+      overall_weight: 0.14
+      features:
+        pos_boxtouch: 0.4
+        pos_boxshots: 0.3
+        pos_opxg: 0.3
+    - name: Ball Retention
+      abbreviation: RET
+      overall_weight: 0.1
+      features:
+        pos_mis: 0.4
+        pos_dis: 0.4
+        pos_passpct: 0.2
+    - name: Defensive Support
+      abbreviation: DEF
+      overall_weight: 0.1
+      features:
+        pos_recover: 0.4
+        pos_intercept: 0.25
+        pos_tackle: 0.25
+        pos_block: 0.1
+  CM:
+    label: CM
+    abilities:
+    - name: Ball Progression
+      abbreviation: PRO
+      overall_weight: 0.24
+      features:
+        pos_ftpass: 0.3
+        pos_progcarry: 0.25
+        pos_progdist: 0.2
+        pos_carrythird: 0.15
+        pos_through: 0.1
+    - name: Retention / Circulation
+      abbreviation: RET
+      overall_weight: 0.2
+      features:
+        pos_mis: 0.3
+        pos_dis: 0.3
+        pos_passpct: 0.2
+        pos_ftpct: 0.1
+        pos_passvolume: 0.1
+    - name: Chance Creation
+      abbreviation: CRE
+      overall_weight: 0.18
+      features:
+        pos_opxa: 0.3
+        pos_opkp: 0.25
+        pos_ppa: 0.2
+        pos_through: 0.1
+        pos_buildup: 0.15
+    - name: Ball Recovery
+      abbreviation: REC
+      overall_weight: 0.18
+      features:
+        pos_recover: 0.4
+        pos_intercept: 0.35
+        pos_tackle: 0.25
+    - name: Duel Contribution
+      abbreviation: DUE
+      overall_weight: 0.12
+      features:
+        pos_groundpct: 0.4
+        pos_ground: 0.3
+        pos_aerialpct: 0.2
+        pos_aerial: 0.1
+    - name: Goal Threat
+      abbreviation: SCO
+      overall_weight: 0.08
+      features:
+        pos_npxg: 0.4
+        pos_npg: 0.25
+        pos_npsot: 0.2
+        pos_boxtouch: 0.15
+  CAM:
+    label: CAM
+    abilities:
+    - name: Chance Creation
+      abbreviation: CRE
+      overall_weight: 0.3
+      features:
+        pos_opxa: 0.35
+        pos_opkp: 0.25
+        pos_ppa: 0.2
+        pos_through: 0.1
+        pos_sca: 0.1
+    - name: Combination / Retention
+      abbreviation: LNK
+      overall_weight: 0.18
+      features:
+        pos_mis: 0.25
+        pos_dis: 0.25
+        pos_passpct: 0.2
+        pos_ftpct: 0.15
+        pos_buildup: 0.15
+    - name: Carrying / 1v1
+      abbreviation: CAR
+      overall_weight: 0.18
+      features:
+        pos_dribble: 0.25
+        pos_dribblepct: 0.2
+        pos_carrybox: 0.25
+        pos_carrythird: 0.15
+        pos_progdist: 0.15
+    - name: Scoring
+      abbreviation: SCO
+      overall_weight: 0.16
+      features:
+        pos_npxg: 0.15
+        pos_npg: 0.25
+        pos_finish: 0.3
+        pos_npsot: 0.15
+        pos_accuracy: 0.15
+    - name: Penalty-Area Threat
+      abbreviation: BOX
+      overall_weight: 0.1
+      features:
+        pos_boxtouch: 0.45
+        pos_boxshots: 0.3
+        pos_opxg: 0.25
+    - name: Defensive Support
+      abbreviation: DEF
+      overall_weight: 0.08
+      features:
+        pos_recover: 0.45
+        pos_intercept: 0.3
+        pos_tackle: 0.25
+  CDM:
+    label: CDM
+    abilities:
+    - name: Screening / Recovery
+      abbreviation: SCR
+      overall_weight: 0.24
+      features:
+        pos_intercept: 0.4
+        pos_recover: 0.35
+        pos_tackle: 0.15
+        pos_block: 0.1
+    - name: Ground Duels
+      abbreviation: DUE
+      overall_weight: 0.18
+      features:
+        pos_groundpct: 0.6
+        pos_ground: 0.4
+    - name: Ball Retention
+      abbreviation: RET
+      overall_weight: 0.2
+      features:
+        pos_mis: 0.3
+        pos_dis: 0.3
+        pos_passpct: 0.25
+        pos_passvolume: 0.15
+    - name: Build-Up / Progression
+      abbreviation: PRO
+      overall_weight: 0.2
+      features:
+        pos_ftpass: 0.3
+        pos_progcarry: 0.2
+        pos_progdist: 0.15
+        pos_through: 0.15
+        pos_buildup: 0.2
+    - name: Aerial Contribution
+      abbreviation: AIR
+      overall_weight: 0.1
+      features:
+        pos_aerialpct: 0.65
+        pos_aerial: 0.35
+    - name: Discipline
+      abbreviation: DIS
+      overall_weight: 0.08
+      features:
+        pos_foul: 0.45
+        pos_yellow: 0.15
+        pos_red: 0.2
+        pos_pen: 0.2
+  LM_RM:
+    label: LM / RM
+    abilities:
+    - name: Wide Creation
+      abbreviation: CRE
+      overall_weight: 0.24
+      features:
+        pos_opxa: 0.3
+        pos_opkp: 0.2
+        pos_cross: 0.25
+        pos_crosspct: 0.15
+        pos_ppa: 0.1
+    - name: Carrying / Progression
+      abbreviation: CAR
+      overall_weight: 0.2
+      features:
+        pos_dribble: 0.25
+        pos_dribblepct: 0.2
+        pos_carrythird: 0.25
+        pos_progdist: 0.2
+        pos_carrybox: 0.1
+    - name: Ball Retention
+      abbreviation: RET
+      overall_weight: 0.16
+      features:
+        pos_mis: 0.3
+        pos_dis: 0.3
+        pos_passpct: 0.25
+        pos_passvolume: 0.15
+    - name: Defensive Support
+      abbreviation: DEF
+      overall_weight: 0.2
+      features:
+        pos_recover: 0.35
+        pos_intercept: 0.3
+        pos_tackle: 0.25
+        pos_block: 0.1
+    - name: Duel Contribution
+      abbreviation: DUE
+      overall_weight: 0.1
+      features:
+        pos_groundpct: 0.45
+        pos_ground: 0.3
+        pos_aerialpct: 0.15
+        pos_aerial: 0.1
+    - name: Goal Threat
+      abbreviation: SCO
+      overall_weight: 0.1
+      features:
+        pos_npxg: 0.4
+        pos_npg: 0.25
+        pos_boxtouch: 0.2
+        pos_npsot: 0.15
+  CB:
+    label: CB
+    abilities:
+    - name: Ground Defending
+      abbreviation: GRD
+      overall_weight: 0.24
+      features:
+        pos_groundpct: 0.5
+        pos_ground: 0.2
+        pos_tackle: 0.2
+        pos_intercept: 0.1
+    - name: Aerial Defending
+      abbreviation: AIR
+      overall_weight: 0.22
+      features:
+        pos_aerialpct: 0.7
+        pos_aerial: 0.3
+    - name: Reading / Interventions
+      abbreviation: INT
+      overall_weight: 0.18
+      features:
+        pos_intercept: 0.35
+        pos_recover: 0.25
+        pos_block: 0.25
+        pos_clear: 0.15
+    - name: Build-Up Passing
+      abbreviation: PAS
+      overall_weight: 0.16
+      features:
+        pos_passpct: 0.35
+        pos_ftpass: 0.3
+        pos_ftpct: 0.15
+        pos_through: 0.1
+        pos_passvolume: 0.1
+    - name: Carrying / Control
+      abbreviation: CAR
+      overall_weight: 0.1
+      features:
+        pos_progcarry: 0.3
+        pos_progdist: 0.25
+        pos_carrythird: 0.15
+        pos_mis: 0.15
+        pos_dis: 0.15
+    - name: Discipline
+      abbreviation: DIS
+      overall_weight: 0.1
+      features:
+        pos_foul: 0.4
+        pos_pen: 0.3
+        pos_red: 0.2
+        pos_yellow: 0.1
+  RB_LB:
+    label: RB / LB
+    abilities:
+    - name: Ground Defending
+      abbreviation: GRD
+      overall_weight: 0.2
+      features:
+        pos_groundpct: 0.55
+        pos_ground: 0.25
+        pos_tackle: 0.2
+    - name: Recovery / Cover
+      abbreviation: REC
+      overall_weight: 0.16
+      features:
+        pos_recover: 0.4
+        pos_intercept: 0.35
+        pos_block: 0.15
+        pos_clear: 0.1
+    - name: Ball Progression
+      abbreviation: PRO
+      overall_weight: 0.18
+      features:
+        pos_carrythird: 0.3
+        pos_progcarry: 0.25
+        pos_progdist: 0.2
+        pos_ftpass: 0.25
+    - name: Wide Creation
+      abbreviation: CRE
+      overall_weight: 0.22
+      features:
+        pos_opxa: 0.3
+        pos_opkp: 0.2
+        pos_cross: 0.25
+        pos_crosspct: 0.15
+        pos_ppa: 0.1
+    - name: Ball Retention
+      abbreviation: RET
+      overall_weight: 0.14
+      features:
+        pos_mis: 0.3
+        pos_dis: 0.3
+        pos_passpct: 0.25
+        pos_ftpct: 0.15
+    - name: Aerial Contribution
+      abbreviation: AIR
+      overall_weight: 0.1
+      features:
+        pos_aerialpct: 0.65
+        pos_aerial: 0.35
+  GK:
+    label: GK
+    abilities:
+    - name: Shot Stopping
+      abbreviation: STP
+      overall_weight: 0.4
+      features:
+        pos_prevent: 0.75
+        pos_savepct: 0.25
+    - name: Claims / Aerial Control
+      abbreviation: CLM
+      overall_weight: 0.15
+      features:
+        pos_claimpct: 0.75
+        pos_claim90: 0.25
+    - name: Sweeping / Interventions
+      abbreviation: SWP
+      overall_weight: 0.1
+      features:
+        pos_sweep90: 0.7
+        pos_gkclear: 0.2
+        pos_gkinter: 0.1
+    - name: Build-Up Distribution
+      abbreviation: BLD
+      overall_weight: 0.15
+      features:
+        pos_gkpasspct: 0.6
+        pos_distpct: 0.25
+        pos_gkpass90: 0.15
+    - name: Long Distribution
+      abbreviation: LNG
+      overall_weight: 0.1
+      features:
+        pos_longpct: 0.8
+        pos_long90: 0.2
+    - name: Ball Security
+      abbreviation: SEC
+      overall_weight: 0.1
+      features:
+        pos_gkmis: 0.6
+        pos_gkdis: 0.4

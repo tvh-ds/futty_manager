@@ -1,0 +1,1774 @@
+{
+  "False": {
+    "catalogue": [
+      {
+        "overall": 18.49257382087503,
+        "abilities": {
+          "Finishing": 18.85725357708301,
+          "Box Threat": 18.90783817375513,
+          "Link-Up / Creation": 19.40050428037026,
+          "Carrying / 1v1": 19.235612572547304,
+          "Physicality": 16.10808200147099,
+          "Defensive Activity": 18.90783817375513
+        }
+      },
+      {
+        "overall": 21.380942383966858,
+        "abilities": {
+          "Finishing": 21.295531171324175,
+          "Box Threat": 21.3339829050964,
+          "Link-Up / Creation": 21.724522092308558,
+          "Carrying / 1v1": 21.585531783360324,
+          "Physicality": 22.44322267591703,
+          "Defensive Activity": 21.3339829050964
+        }
+      },
+      {
+        "overall": 24.154004413203044,
+        "abilities": {
+          "Finishing": 23.62903374934919,
+          "Box Threat": 23.656887435103997,
+          "Link-Up / Creation": 23.955072291681713,
+          "Carrying / 1v1": 23.84132841207116,
+          "Physicality": 28.559497399922705,
+          "Defensive Activity": 23.656887435103993
+        }
+      },
+      {
+        "overall": 26.81876466658276,
+        "abilities": {
+          "Finishing": 25.864368966217995,
+          "Box Threat": 25.883004276361277,
+          "Link-Up / Creation": 26.097970167932523,
+          "Carrying / 1v1": 26.008611234086157,
+          "Physicality": 34.469136968081834,
+          "Defensive Activity": 25.883004276361273
+        }
+      },
+      {
+        "overall": 29.381664777004914,
+        "abilities": {
+          "Finishing": 28.00760057902135,
+          "Box Threat": 28.018259205730498,
+          "Link-Up / Creation": 28.158556464500208,
+          "Carrying / 1v1": 28.092547934123925,
+          "Physicality": 40.18343603943738,
+          "Defensive Activity": 28.018259205730494
+        }
+      },
+      {
+        "overall": 29.22616910180447,
+        "abilities": {
+          "Finishing": 30.064303255246514,
+          "Box Threat": 30.06810393792496,
+          "Link-Up / Creation": 30.141744832032195,
+          "Carrying / 1v1": 30.09790795119496,
+          "Physicality": 23.994373474736836,
+          "Defensive Activity": 30.06810393792496
+        }
+      },
+      {
+        "overall": 31.654114752194317,
+        "abilities": {
+          "Finishing": 32.03961088725458,
+          "Box Threat": 32.03756260219023,
+          "Link-Up / Creation": 32.05206369887764,
+          "Carrying / 1v1": 32.02910039565941,
+          "Physicality": 29.774422353537457,
+          "Defensive Activity": 32.03756260219022
+        }
+      },
+      {
+        "overall": 33.99469487385888,
+        "abilities": {
+          "Finishing": 33.938259292795095,
+          "Box Threat": 33.93127285629144,
+          "Link-Up / Creation": 33.89369331038422,
+          "Carrying / 1v1": 33.89020769019241,
+          "Physicality": 35.371867531343,
+          "Defensive Activity": 33.931272856291436
+        }
+      },
+      {
+        "overall": 36.25270748475134,
+        "abilities": {
+          "Finishing": 35.76462404785523,
+          "Box Threat": 35.75352234608695,
+          "Link-Up / Creation": 35.67049857507872,
+          "Carrying / 1v1": 35.68501548943012,
+          "Physicality": 40.7959886358066,
+          "Defensive Activity": 35.753522346086946
+        }
+      },
+      {
+        "overall": 38.432601020067,
+        "abilities": {
+          "Finishing": 37.522754086912336,
+          "Box Threat": 37.50828111403817,
+          "Link-Up / Creation": 37.38605826128507,
+          "Carrying / 1v1": 37.4170393520174,
+          "Physicality": 46.05541958953076,
+          "Defensive Activity": 37.50828111403817
+        }
+      },
+      {
+        "overall": 38.15444220628328,
+        "abilities": {
+          "Finishing": 39.216401612727495,
+          "Box Threat": 39.19923047224572,
+          "Link-Up / Creation": 39.043691008668254,
+          "Carrying / 1v1": 39.08954857084738,
+          "Physicality": 31.414141822534408,
+          "Defensive Activity": 39.19923047224572
+        }
+      },
+      {
+        "overall": 40.232771083262854,
+        "abilities": {
+          "Finishing": 40.849048779913815,
+          "Box Threat": 40.82978878194586,
+          "Link-Up / Creation": 40.64647855283883,
+          "Carrying / 1v1": 40.705587510146614,
+          "Physicality": 36.720360173289556,
+          "Defensive Activity": 40.82978878194586
+        }
+      },
+      {
+        "overall": 42.24303319199183,
+        "abilities": {
+          "Finishing": 42.42393155096896,
+          "Box Threat": 42.40313451937582,
+          "Link-Up / Creation": 42.19728650527354,
+          "Carrying / 1v1": 42.267994749843645,
+          "Physicality": 41.872080396143076,
+          "Defensive Activity": 42.40313451937582
+        }
+      },
+      {
+        "overall": 44.18863901218184,
+        "abilities": {
+          "Finishing": 43.944061068150475,
+          "Box Threat": 43.922226955515086,
+          "Link-Up / Creation": 43.69878298359974,
+          "Carrying / 1v1": 43.77942029683718,
+          "Physicality": 46.87650225358626,
+          "Defensive Activity": 43.92222695551508
+        }
+      },
+      {
+        "overall": 46.07277184140679,
+        "abilities": {
+          "Finishing": 45.41224283774075,
+          "Box Threat": 45.38982473280217,
+          "Link-Up / Creation": 45.15345534728551,
+          "Carrying / 1v1": 45.242341088111274,
+          "Physicality": 51.740366298506004,
+          "Defensive Activity": 45.38982473280216
+        }
+      },
+      {
+        "overall": 45.713014901038434,
+        "abilities": {
+          "Finishing": 46.83109398348096,
+          "Box Threat": 46.80850258417969,
+          "Link-Up / Creation": 46.56362525977065,
+          "Carrying / 1v1": 46.65907498111423,
+          "Physicality": 38.37126608411394,
+          "Defensive Activity": 46.80850258417969
+        }
+      },
+      {
+        "overall": 47.51876081039812,
+        "abilities": {
+          "Finishing": 48.20305879208791,
+          "Box Threat": 48.180666407643194,
+          "Link-Up / Creation": 47.931462269087326,
+          "Carrying / 1v1": 48.03179340158953,
+          "Physicality": 43.26928026314263,
+          "Defensive Activity": 48.180666407643194
+        }
+      },
+      {
+        "overall": 49.27024317916154,
+        "abilities": {
+          "Finishing": 49.53042274483658,
+          "Box Threat": 49.50856688196272,
+          "Link-Up / Creation": 49.25899607423613,
+          "Carrying / 1v1": 49.36253279743592,
+          "Physicality": 48.03498293518099,
+          "Defensive Activity": 49.50856688196272
+        }
+      },
+      {
+        "overall": 50.96996159189507,
+        "abilities": {
+          "Finishing": 50.8153252044241,
+          "Box Threat": 50.79431178566891,
+          "Link-Up / Creation": 50.54812762334581,
+          "Carrying / 1v1": 50.65320502860885,
+          "Physicality": 52.67406834625087,
+          "Defensive Activity": 50.79431178566891
+        }
+      },
+      {
+        "overall": 52.620262287008146,
+        "abilities": {
+          "Finishing": 52.059770905060105,
+          "Box Threat": 52.03987716113429,
+          "Link-Up / Creation": 51.80063917138981,
+          "Carrying / 1v1": 51.90560680708934,
+          "Physicality": 57.191895520266925,
+          "Defensive Activity": 52.03987716113429
+        }
+      },
+      {
+        "overall": 52.206065243593436,
+        "abilities": {
+          "Finishing": 53.265640375416794,
+          "Box Threat": 53.247117448123824,
+          "Link-Up / Creation": 53.018203409506825,
+          "Carrying / 1v1": 53.12142828714202,
+          "Physicality": 44.88699806552311,
+          "Defensive Activity": 53.247117448123824
+        }
+      },
+      {
+        "overall": 53.794578000181566,
+        "abilities": {
+          "Finishing": 54.434699408275755,
+          "Box Threat": 54.41777469611367,
+          "Link-Up / Creation": 54.20239176439243,
+          "Carrying / 1v1": 54.30226089413919,
+          "Physicality": 49.43029588552633,
+          "Defensive Activity": 54.41777469611367
+        }
+      },
+      {
+        "overall": 55.338990742435165,
+        "abilities": {
+          "Finishing": 55.56860767704089,
+          "Box Threat": 55.5534869516262,
+          "Link-Up / Creation": 55.35468195446954,
+          "Carrying / 1v1": 55.449604469863964,
+          "Physicality": 53.85908259017045,
+          "Defensive Activity": 55.5534869516262
+        }
+      },
+      {
+        "overall": 56.84118319244774,
+        "abilities": {
+          "Finishing": 56.668926587437596,
+          "Box Threat": 56.655795905506004,
+          "Link-Up / Creation": 56.47646487934699,
+          "Carrying / 1v1": 56.56487380319491,
+          "Physicality": 58.17793702724274,
+          "Defensive Activity": 56.655795905506004
+        }
+      },
+      {
+        "overall": 58.302928205437254,
+        "abilities": {
+          "Finishing": 57.73712644242513,
+          "Box Threat": 57.726153875215395,
+          "Link-Up / Creation": 57.56905091020215,
+          "Carrying / 1v1": 57.649404607223346,
+          "Physicality": 62.391187758459324,
+          "Defensive Activity": 57.726153875215395
+        }
+      },
+      {
+        "overall": 57.85270649244207,
+        "abilities": {
+          "Finishing": 58.77459298938328,
+          "Box Threat": 58.765930188647374,
+          "Link-Up / Creation": 58.63367564099621,
+          "Carrying / 1v1": 58.70445899699761,
+          "Physicality": 50.98973776358813,
+          "Defensive Activity": 58.765930188647374
+        }
+      },
+      {
+        "overall": 59.264867798242946,
+        "abilities": {
+          "Finishing": 59.782633410813204,
+          "Box Threat": 59.77641702846154,
+          "Link-Up / Creation": 59.671505153679085,
+          "Carrying / 1v1": 59.731230516089084,
+          "Physicality": 55.22234597665074,
+          "Defensive Activity": 59.77641702846154
+        }
+      },
+      {
+        "overall": 60.64059847800913,
+        "abilities": {
+          "Finishing": 60.7624818129504,
+          "Box Threat": 60.75883478939197,
+          "Link-Up / Creation": 60.68364084463431,
+          "Carrying / 1v1": 60.73084875491364,
+          "Physicality": 59.35493037565419,
+          "Defensive Activity": 60.75883478939197
+        }
+      },
+      {
+        "overall": 61.9813434223379,
+        "abilities": {
+          "Finishing": 61.71530426069672,
+          "Box Threat": 61.71433699522842,
+          "Link-Up / Creation": 61.671123854437546,
+          "Carrying / 1v1": 61.70438359912095,
+          "Physicality": 63.39122648454024,
+          "Defensive Activity": 61.71433699522842
+        }
+      },
+      {
+        "overall": 63.28847098857598,
+        "abilities": {
+          "Finishing": 62.642203402019234,
+          "Box Threat": 62.64401481712337,
+          "Link-Up / Creation": 62.63493913845268,
+          "Carrying / 1v1": 62.65284914229609,
+          "Physicality": 67.33477925914725,
+          "Defensive Activity": 62.64401481712337
+        }
+      },
+      {
+        "overall": 62.81496474136961,
+        "abilities": {
+          "Finishing": 63.54422272033406,
+          "Box Threat": 63.54890123043444,
+          "Link-Up / Creation": 63.576019211786544,
+          "Carrying / 1v1": 63.577207293630494,
+          "Physicality": 56.709975648537416,
+          "Defensive Activity": 63.54890123043444
+        }
+      },
+      {
+        "overall": 64.08168540510218,
+        "abilities": {
+          "Finishing": 64.42235044932495,
+          "Box Threat": 64.4299748433952,
+          "Link-Up / Creation": 64.49524759859712,
+          "Carrying / 1v1": 64.47837110805156,
+          "Physicality": 60.668487513573794,
+          "Defensive Activity": 64.42997484339521
+        }
+      },
+      {
+        "overall": 65.31788549112841,
+        "abilities": {
+          "Finishing": 65.27752318104126,
+          "Box Threat": 65.28816342744793,
+          "Link-Up / Creation": 65.39346201263041,
+          "Carrying / 1v1": 65.35720786349496,
+          "Physicality": 64.53891692005118,
+          "Defensive Activity": 65.28816342744791
+        }
+      },
+      {
+        "overall": 66.52469681007904,
+        "abilities": {
+          "Finishing": 66.11062919494577,
+          "Box Threat": 66.12434717601207,
+          "Link-Up / Creation": 66.27145729310749,
+          "Carrying / 1v1": 66.21454190751955,
+          "Physicality": 68.32435029349527,
+          "Defensive Activity": 66.12434717601208
+        }
+      },
+      {
+        "overall": 67.70319505827885,
+        "abilities": {
+          "Finishing": 66.92251153276784,
+          "Box Threat": 66.93936171575183,
+          "Link-Up / Creation": 67.12998811763849,
+          "Carrying / 1v1": 67.05115729325752,
+          "Physicality": 72.02772644600462,
+          "Defensive Activity": 66.93936171575183
+        }
+      },
+      {
+        "overall": 67.21535956268785,
+        "abilities": {
+          "Finishing": 67.71397084151356,
+          "Box Threat": 67.73400089199812,
+          "Link-Up / Creation": 67.96977151167542,
+          "Carrying / 1v1": 67.8678002227301,
+          "Physicality": 62.077802018671214,
+          "Defensive Activity": 67.73400089199812
+        }
+      },
+      {
+        "overall": 68.36048645798358,
+        "abilities": {
+          "Finishing": 68.48576800477365,
+          "Box Threat": 68.50901934784324,
+          "Link-Up / Creation": 68.79148917208434,
+          "Carrying / 1v1": 68.665181313812,
+          "Physicality": 65.79291432334836,
+          "Defensive Activity": 68.50901934784324
+        }
+      },
+      {
+        "overall": 69.47973050441745,
+        "abilities": {
+          "Finishing": 69.23862658049146,
+          "Box Threat": 69.26513491452141,
+          "Link-Up / Creation": 69.59578962070677,
+          "Carrying / 1v1": 69.44397770556832,
+          "Physicality": 69.42989860909931,
+          "Defensive Activity": 69.26513491452141
+        }
+      },
+      {
+        "overall": 70.57399295179947,
+        "abilities": {
+          "Finishing": 69.97323506159088,
+          "Box Threat": 70.00303082899046,
+          "Link-Up / Creation": 70.38329020224742,
+          "Carrying / 1v1": 70.2048350152955,
+          "Physicality": 72.99133374947311,
+          "Defensive Activity": 70.00303082899046
+        }
+      },
+      {
+        "overall": 71.64413305451387,
+        "abilities": {
+          "Finishing": 70.69024897430694,
+          "Box Threat": 70.72335779311504,
+          "Link-Up / Creation": 71.15457893946154,
+          "Carrying / 1v1": 70.94836915935205,
+          "Physicality": 76.47968252844397,
+          "Defensive Activity": 70.72335779311504
+        }
+      }
+    ],
+    "role": [
+      {
+        "overall": 18.49257382087503,
+        "abilities": {
+          "Finishing": 18.85725357708301,
+          "Box Threat": 18.90783817375513,
+          "Link-Up / Creation": 19.40050428037026,
+          "Carrying / 1v1": 19.235612572547304,
+          "Physicality": 16.10808200147099,
+          "Defensive Activity": 18.90783817375513
+        }
+      },
+      {
+        "overall": 21.380942383966858,
+        "abilities": {
+          "Finishing": 21.295531171324175,
+          "Box Threat": 21.3339829050964,
+          "Link-Up / Creation": 21.724522092308558,
+          "Carrying / 1v1": 21.585531783360324,
+          "Physicality": 22.44322267591703,
+          "Defensive Activity": 21.3339829050964
+        }
+      },
+      {
+        "overall": 24.154004413203044,
+        "abilities": {
+          "Finishing": 23.62903374934919,
+          "Box Threat": 23.656887435103997,
+          "Link-Up / Creation": 23.955072291681713,
+          "Carrying / 1v1": 23.84132841207116,
+          "Physicality": 28.559497399922705,
+          "Defensive Activity": 23.656887435103993
+        }
+      },
+      {
+        "overall": 26.81876466658276,
+        "abilities": {
+          "Finishing": 25.864368966217995,
+          "Box Threat": 25.883004276361277,
+          "Link-Up / Creation": 26.097970167932523,
+          "Carrying / 1v1": 26.008611234086157,
+          "Physicality": 34.469136968081834,
+          "Defensive Activity": 25.883004276361273
+        }
+      },
+      {
+        "overall": 29.381664777004914,
+        "abilities": {
+          "Finishing": 28.00760057902135,
+          "Box Threat": 28.018259205730498,
+          "Link-Up / Creation": 28.158556464500208,
+          "Carrying / 1v1": 28.092547934123925,
+          "Physicality": 40.18343603943738,
+          "Defensive Activity": 28.018259205730494
+        }
+      },
+      {
+        "overall": 29.22616910180447,
+        "abilities": {
+          "Finishing": 30.064303255246514,
+          "Box Threat": 30.06810393792496,
+          "Link-Up / Creation": 30.141744832032195,
+          "Carrying / 1v1": 30.09790795119496,
+          "Physicality": 23.994373474736836,
+          "Defensive Activity": 30.06810393792496
+        }
+      },
+      {
+        "overall": 31.654114752194317,
+        "abilities": {
+          "Finishing": 32.03961088725458,
+          "Box Threat": 32.03756260219023,
+          "Link-Up / Creation": 32.05206369887764,
+          "Carrying / 1v1": 32.02910039565941,
+          "Physicality": 29.774422353537457,
+          "Defensive Activity": 32.03756260219022
+        }
+      },
+      {
+        "overall": 33.99469487385888,
+        "abilities": {
+          "Finishing": 33.938259292795095,
+          "Box Threat": 33.93127285629144,
+          "Link-Up / Creation": 33.89369331038422,
+          "Carrying / 1v1": 33.89020769019241,
+          "Physicality": 35.371867531343,
+          "Defensive Activity": 33.931272856291436
+        }
+      },
+      {
+        "overall": 36.25270748475134,
+        "abilities": {
+          "Finishing": 35.76462404785523,
+          "Box Threat": 35.75352234608695,
+          "Link-Up / Creation": 35.67049857507872,
+          "Carrying / 1v1": 35.68501548943012,
+          "Physicality": 40.7959886358066,
+          "Defensive Activity": 35.753522346086946
+        }
+      },
+      {
+        "overall": 38.432601020067,
+        "abilities": {
+          "Finishing": 37.522754086912336,
+          "Box Threat": 37.50828111403817,
+          "Link-Up / Creation": 37.38605826128507,
+          "Carrying / 1v1": 37.4170393520174,
+          "Physicality": 46.05541958953076,
+          "Defensive Activity": 37.50828111403817
+        }
+      },
+      {
+        "overall": 38.15444220628328,
+        "abilities": {
+          "Finishing": 39.216401612727495,
+          "Box Threat": 39.19923047224572,
+          "Link-Up / Creation": 39.043691008668254,
+          "Carrying / 1v1": 39.08954857084738,
+          "Physicality": 31.414141822534408,
+          "Defensive Activity": 39.19923047224572
+        }
+      },
+      {
+        "overall": 40.232771083262854,
+        "abilities": {
+          "Finishing": 40.849048779913815,
+          "Box Threat": 40.82978878194586,
+          "Link-Up / Creation": 40.64647855283883,
+          "Carrying / 1v1": 40.705587510146614,
+          "Physicality": 36.720360173289556,
+          "Defensive Activity": 40.82978878194586
+        }
+      },
+      {
+        "overall": 42.24303319199183,
+        "abilities": {
+          "Finishing": 42.42393155096896,
+          "Box Threat": 42.40313451937582,
+          "Link-Up / Creation": 42.19728650527354,
+          "Carrying / 1v1": 42.267994749843645,
+          "Physicality": 41.872080396143076,
+          "Defensive Activity": 42.40313451937582
+        }
+      },
+      {
+        "overall": 44.18863901218184,
+        "abilities": {
+          "Finishing": 43.944061068150475,
+          "Box Threat": 43.922226955515086,
+          "Link-Up / Creation": 43.69878298359974,
+          "Carrying / 1v1": 43.77942029683718,
+          "Physicality": 46.87650225358626,
+          "Defensive Activity": 43.92222695551508
+        }
+      },
+      {
+        "overall": 46.07277184140679,
+        "abilities": {
+          "Finishing": 45.41224283774075,
+          "Box Threat": 45.38982473280217,
+          "Link-Up / Creation": 45.15345534728551,
+          "Carrying / 1v1": 45.242341088111274,
+          "Physicality": 51.740366298506004,
+          "Defensive Activity": 45.38982473280216
+        }
+      },
+      {
+        "overall": 45.713014901038434,
+        "abilities": {
+          "Finishing": 46.83109398348096,
+          "Box Threat": 46.80850258417969,
+          "Link-Up / Creation": 46.56362525977065,
+          "Carrying / 1v1": 46.65907498111423,
+          "Physicality": 38.37126608411394,
+          "Defensive Activity": 46.80850258417969
+        }
+      },
+      {
+        "overall": 47.51876081039812,
+        "abilities": {
+          "Finishing": 48.20305879208791,
+          "Box Threat": 48.180666407643194,
+          "Link-Up / Creation": 47.931462269087326,
+          "Carrying / 1v1": 48.03179340158953,
+          "Physicality": 43.26928026314263,
+          "Defensive Activity": 48.180666407643194
+        }
+      },
+      {
+        "overall": 49.27024317916154,
+        "abilities": {
+          "Finishing": 49.53042274483658,
+          "Box Threat": 49.50856688196272,
+          "Link-Up / Creation": 49.25899607423613,
+          "Carrying / 1v1": 49.36253279743592,
+          "Physicality": 48.03498293518099,
+          "Defensive Activity": 49.50856688196272
+        }
+      },
+      {
+        "overall": 50.96996159189507,
+        "abilities": {
+          "Finishing": 50.8153252044241,
+          "Box Threat": 50.79431178566891,
+          "Link-Up / Creation": 50.54812762334581,
+          "Carrying / 1v1": 50.65320502860885,
+          "Physicality": 52.67406834625087,
+          "Defensive Activity": 50.79431178566891
+        }
+      },
+      {
+        "overall": 52.620262287008146,
+        "abilities": {
+          "Finishing": 52.059770905060105,
+          "Box Threat": 52.03987716113429,
+          "Link-Up / Creation": 51.80063917138981,
+          "Carrying / 1v1": 51.90560680708934,
+          "Physicality": 57.191895520266925,
+          "Defensive Activity": 52.03987716113429
+        }
+      },
+      {
+        "overall": 52.206065243593436,
+        "abilities": {
+          "Finishing": 53.265640375416794,
+          "Box Threat": 53.247117448123824,
+          "Link-Up / Creation": 53.018203409506825,
+          "Carrying / 1v1": 53.12142828714202,
+          "Physicality": 44.88699806552311,
+          "Defensive Activity": 53.247117448123824
+        }
+      },
+      {
+        "overall": 53.794578000181566,
+        "abilities": {
+          "Finishing": 54.434699408275755,
+          "Box Threat": 54.41777469611367,
+          "Link-Up / Creation": 54.20239176439243,
+          "Carrying / 1v1": 54.30226089413919,
+          "Physicality": 49.43029588552633,
+          "Defensive Activity": 54.41777469611367
+        }
+      },
+      {
+        "overall": 55.338990742435165,
+        "abilities": {
+          "Finishing": 55.56860767704089,
+          "Box Threat": 55.5534869516262,
+          "Link-Up / Creation": 55.35468195446954,
+          "Carrying / 1v1": 55.449604469863964,
+          "Physicality": 53.85908259017045,
+          "Defensive Activity": 55.5534869516262
+        }
+      },
+      {
+        "overall": 56.84118319244774,
+        "abilities": {
+          "Finishing": 56.668926587437596,
+          "Box Threat": 56.655795905506004,
+          "Link-Up / Creation": 56.47646487934699,
+          "Carrying / 1v1": 56.56487380319491,
+          "Physicality": 58.17793702724274,
+          "Defensive Activity": 56.655795905506004
+        }
+      },
+      {
+        "overall": 58.302928205437254,
+        "abilities": {
+          "Finishing": 57.73712644242513,
+          "Box Threat": 57.726153875215395,
+          "Link-Up / Creation": 57.56905091020215,
+          "Carrying / 1v1": 57.649404607223346,
+          "Physicality": 62.391187758459324,
+          "Defensive Activity": 57.726153875215395
+        }
+      },
+      {
+        "overall": 57.85270649244207,
+        "abilities": {
+          "Finishing": 58.77459298938328,
+          "Box Threat": 58.765930188647374,
+          "Link-Up / Creation": 58.63367564099621,
+          "Carrying / 1v1": 58.70445899699761,
+          "Physicality": 50.98973776358813,
+          "Defensive Activity": 58.765930188647374
+        }
+      },
+      {
+        "overall": 59.264867798242946,
+        "abilities": {
+          "Finishing": 59.782633410813204,
+          "Box Threat": 59.77641702846154,
+          "Link-Up / Creation": 59.671505153679085,
+          "Carrying / 1v1": 59.731230516089084,
+          "Physicality": 55.22234597665074,
+          "Defensive Activity": 59.77641702846154
+        }
+      },
+      {
+        "overall": 60.64059847800913,
+        "abilities": {
+          "Finishing": 60.7624818129504,
+          "Box Threat": 60.75883478939197,
+          "Link-Up / Creation": 60.68364084463431,
+          "Carrying / 1v1": 60.73084875491364,
+          "Physicality": 59.35493037565419,
+          "Defensive Activity": 60.75883478939197
+        }
+      },
+      {
+        "overall": 61.9813434223379,
+        "abilities": {
+          "Finishing": 61.71530426069672,
+          "Box Threat": 61.71433699522842,
+          "Link-Up / Creation": 61.671123854437546,
+          "Carrying / 1v1": 61.70438359912095,
+          "Physicality": 63.39122648454024,
+          "Defensive Activity": 61.71433699522842
+        }
+      },
+      {
+        "overall": 63.28847098857598,
+        "abilities": {
+          "Finishing": 62.642203402019234,
+          "Box Threat": 62.64401481712337,
+          "Link-Up / Creation": 62.63493913845268,
+          "Carrying / 1v1": 62.65284914229609,
+          "Physicality": 67.33477925914725,
+          "Defensive Activity": 62.64401481712337
+        }
+      },
+      {
+        "overall": 62.81496474136961,
+        "abilities": {
+          "Finishing": 63.54422272033406,
+          "Box Threat": 63.54890123043444,
+          "Link-Up / Creation": 63.576019211786544,
+          "Carrying / 1v1": 63.577207293630494,
+          "Physicality": 56.709975648537416,
+          "Defensive Activity": 63.54890123043444
+        }
+      },
+      {
+        "overall": 64.08168540510218,
+        "abilities": {
+          "Finishing": 64.42235044932495,
+          "Box Threat": 64.4299748433952,
+          "Link-Up / Creation": 64.49524759859712,
+          "Carrying / 1v1": 64.47837110805156,
+          "Physicality": 60.668487513573794,
+          "Defensive Activity": 64.42997484339521
+        }
+      },
+      {
+        "overall": 65.31788549112841,
+        "abilities": {
+          "Finishing": 65.27752318104126,
+          "Box Threat": 65.28816342744793,
+          "Link-Up / Creation": 65.39346201263041,
+          "Carrying / 1v1": 65.35720786349496,
+          "Physicality": 64.53891692005118,
+          "Defensive Activity": 65.28816342744791
+        }
+      },
+      {
+        "overall": 66.52469681007904,
+        "abilities": {
+          "Finishing": 66.11062919494577,
+          "Box Threat": 66.12434717601207,
+          "Link-Up / Creation": 66.27145729310749,
+          "Carrying / 1v1": 66.21454190751955,
+          "Physicality": 68.32435029349527,
+          "Defensive Activity": 66.12434717601208
+        }
+      },
+      {
+        "overall": 67.70319505827885,
+        "abilities": {
+          "Finishing": 66.92251153276784,
+          "Box Threat": 66.93936171575183,
+          "Link-Up / Creation": 67.12998811763849,
+          "Carrying / 1v1": 67.05115729325752,
+          "Physicality": 72.02772644600462,
+          "Defensive Activity": 66.93936171575183
+        }
+      },
+      {
+        "overall": 67.21535956268785,
+        "abilities": {
+          "Finishing": 67.71397084151356,
+          "Box Threat": 67.73400089199812,
+          "Link-Up / Creation": 67.96977151167542,
+          "Carrying / 1v1": 67.8678002227301,
+          "Physicality": 62.077802018671214,
+          "Defensive Activity": 67.73400089199812
+        }
+      },
+      {
+        "overall": 68.36048645798358,
+        "abilities": {
+          "Finishing": 68.48576800477365,
+          "Box Threat": 68.50901934784324,
+          "Link-Up / Creation": 68.79148917208434,
+          "Carrying / 1v1": 68.665181313812,
+          "Physicality": 65.79291432334836,
+          "Defensive Activity": 68.50901934784324
+        }
+      },
+      {
+        "overall": 69.47973050441745,
+        "abilities": {
+          "Finishing": 69.23862658049146,
+          "Box Threat": 69.26513491452141,
+          "Link-Up / Creation": 69.59578962070677,
+          "Carrying / 1v1": 69.44397770556832,
+          "Physicality": 69.42989860909931,
+          "Defensive Activity": 69.26513491452141
+        }
+      },
+      {
+        "overall": 70.57399295179947,
+        "abilities": {
+          "Finishing": 69.97323506159088,
+          "Box Threat": 70.00303082899046,
+          "Link-Up / Creation": 70.38329020224742,
+          "Carrying / 1v1": 70.2048350152955,
+          "Physicality": 72.99133374947311,
+          "Defensive Activity": 70.00303082899046
+        }
+      },
+      {
+        "overall": 71.64413305451387,
+        "abilities": {
+          "Finishing": 70.69024897430694,
+          "Box Threat": 70.72335779311504,
+          "Link-Up / Creation": 71.15457893946154,
+          "Carrying / 1v1": 70.94836915935205,
+          "Physicality": 76.47968252844397,
+          "Defensive Activity": 70.72335779311504
+        }
+      }
+    ]
+  },
+  "True": {
+    "catalogue": [
+      {
+        "overall": 19.436013472051677,
+        "abilities": {
+          "Finishing": 18.85725357708301,
+          "Box Threat": 18.90783817375513,
+          "Link-Up / Creation": 19.40050428037026,
+          "Carrying / 1v1": 19.235612572547304,
+          "Physicality": 22.462227174078702,
+          "Defensive Activity": 18.90783817375513
+        }
+      },
+      {
+        "overall": 21.746368981842835,
+        "abilities": {
+          "Finishing": 21.295531171324175,
+          "Box Threat": 21.3339829050964,
+          "Link-Up / Creation": 21.724522092308558,
+          "Carrying / 1v1": 21.585531783360324,
+          "Physicality": 24.12074228985371,
+          "Defensive Activity": 21.3339829050964
+        }
+      },
+      {
+        "overall": 23.965894138399776,
+        "abilities": {
+          "Finishing": 23.62903374934919,
+          "Box Threat": 23.656887435103997,
+          "Link-Up / Creation": 23.955072291681713,
+          "Carrying / 1v1": 23.84132841207116,
+          "Physicality": 25.758759227676503,
+          "Defensive Activity": 23.656887435103993
+        }
+      },
+      {
+        "overall": 26.100067281609967,
+        "abilities": {
+          "Finishing": 25.864368966217995,
+          "Box Threat": 25.883004276361277,
+          "Link-Up / Creation": 26.097970167932523,
+          "Carrying / 1v1": 26.008611234086157,
+          "Physicality": 27.376129004379827,
+          "Defensive Activity": 25.883004276361273
+        }
+      },
+      {
+        "overall": 28.153928087977835,
+        "abilities": {
+          "Finishing": 28.00760057902135,
+          "Box Threat": 28.018259205730498,
+          "Link-Up / Creation": 28.158556464500208,
+          "Carrying / 1v1": 28.092547934123925,
+          "Physicality": 28.972776312170037,
+          "Defensive Activity": 28.018259205730494
+        }
+      },
+      {
+        "overall": 30.132120927763378,
+        "abilities": {
+          "Finishing": 30.064303255246514,
+          "Box Threat": 30.06810393792496,
+          "Link-Up / Creation": 30.141744832032195,
+          "Carrying / 1v1": 30.09790795119496,
+          "Physicality": 30.54868844470697,
+          "Defensive Activity": 30.06810393792496
+        }
+      },
+      {
+        "overall": 32.03893315957832,
+        "abilities": {
+          "Finishing": 32.03961088725458,
+          "Box Threat": 32.03756260219023,
+          "Link-Up / Creation": 32.05206369887764,
+          "Carrying / 1v1": 32.02910039565941,
+          "Physicality": 32.103905816686755,
+          "Defensive Activity": 32.03756260219022
+        }
+      },
+      {
+        "overall": 33.878329040530964,
+        "abilities": {
+          "Finishing": 33.938259292795095,
+          "Box Threat": 33.93127285629144,
+          "Link-Up / Creation": 33.89369331038422,
+          "Carrying / 1v1": 33.89020769019241,
+          "Physicality": 33.63851383458703,
+          "Defensive Activity": 33.931272856291436
+        }
+      },
+      {
+        "overall": 35.65397982799727,
+        "abilities": {
+          "Finishing": 35.76462404785523,
+          "Box Threat": 35.75352234608695,
+          "Link-Up / Creation": 35.67049857507872,
+          "Carrying / 1v1": 35.68501548943012,
+          "Physicality": 35.1526359159189,
+          "Defensive Activity": 35.753522346086946
+        }
+      },
+      {
+        "overall": 37.36929056404976,
+        "abilities": {
+          "Finishing": 37.522754086912336,
+          "Box Threat": 37.50828111403817,
+          "Link-Up / Creation": 37.38605826128507,
+          "Carrying / 1v1": 37.4170393520174,
+          "Physicality": 36.646427487005965,
+          "Defensive Activity": 37.50828111403817
+        }
+      },
+      {
+        "overall": 39.02742396241161,
+        "abilities": {
+          "Finishing": 39.216401612727495,
+          "Box Threat": 39.19923047224572,
+          "Link-Up / Creation": 39.043691008668254,
+          "Carrying / 1v1": 39.08954857084738,
+          "Physicality": 38.12007081631315,
+          "Defensive Activity": 39.19923047224572
+        }
+      },
+      {
+        "overall": 40.63132175805153,
+        "abilities": {
+          "Finishing": 40.849048779913815,
+          "Box Threat": 40.82978878194586,
+          "Link-Up / Creation": 40.64647855283883,
+          "Carrying / 1v1": 40.705587510146614,
+          "Physicality": 39.573770562733564,
+          "Defensive Activity": 40.82978878194586
+        }
+      },
+      {
+        "overall": 42.18372382919061,
+        "abilities": {
+          "Finishing": 42.42393155096896,
+          "Box Threat": 42.40313451937582,
+          "Link-Up / Creation": 42.19728650527354,
+          "Carrying / 1v1": 42.267994749843645,
+          "Physicality": 41.00774993685242,
+          "Defensive Activity": 42.40313451937582
+        }
+      },
+      {
+        "overall": 43.687185358940994,
+        "abilities": {
+          "Finishing": 43.944061068150475,
+          "Box Threat": 43.922226955515086,
+          "Link-Up / Creation": 43.69878298359974,
+          "Carrying / 1v1": 43.77942029683718,
+          "Physicality": 42.42224738873751,
+          "Defensive Activity": 43.92222695551508
+        }
+      },
+      {
+        "overall": 45.14409226771594,
+        "abilities": {
+          "Finishing": 45.41224283774075,
+          "Box Threat": 45.38982473280217,
+          "Link-Up / Creation": 45.15345534728551,
+          "Carrying / 1v1": 45.242341088111274,
+          "Physicality": 43.81751374878878,
+          "Defensive Activity": 45.38982473280216
+        }
+      },
+      {
+        "overall": 46.55667511686736,
+        "abilities": {
+          "Finishing": 46.83109398348096,
+          "Box Threat": 46.80850258417969,
+          "Link-Up / Creation": 46.56362525977065,
+          "Carrying / 1v1": 46.65907498111423,
+          "Physicality": 45.193809759074675,
+          "Defensive Activity": 46.80850258417969
+        }
+      },
+      {
+        "overall": 47.927021657837145,
+        "abilities": {
+          "Finishing": 48.20305879208791,
+          "Box Threat": 48.180666407643194,
+          "Link-Up / Creation": 47.931462269087326,
+          "Carrying / 1v1": 48.03179340158953,
+          "Physicality": 46.551403941744546,
+          "Defensive Activity": 48.180666407643194
+        }
+      },
+      {
+        "overall": 49.25708817872331,
+        "abilities": {
+          "Finishing": 49.53042274483658,
+          "Box Threat": 49.50856688196272,
+          "Link-Up / Creation": 49.25899607423613,
+          "Carrying / 1v1": 49.36253279743592,
+          "Physicality": 47.89057075883075,
+          "Defensive Activity": 49.50856688196272
+        }
+      },
+      {
+        "overall": 50.54870978096661,
+        "abilities": {
+          "Finishing": 50.8153252044241,
+          "Box Threat": 50.79431178566891,
+          "Link-Up / Creation": 50.54812762334581,
+          "Carrying / 1v1": 50.65320502860885,
+          "Physicality": 49.21158902428315,
+          "Defensive Activity": 50.79431178566891
+        }
+      },
+      {
+        "overall": 51.80360970235665,
+        "abilities": {
+          "Finishing": 52.059770905060105,
+          "Box Threat": 52.03987716113429,
+          "Link-Up / Creation": 51.80063917138981,
+          "Carrying / 1v1": 51.90560680708934,
+          "Physicality": 50.514740534612486,
+          "Defensive Activity": 52.03987716113429
+        }
+      },
+      {
+        "overall": 53.02340778832637,
+        "abilities": {
+          "Finishing": 53.265640375416794,
+          "Box Threat": 53.247117448123824,
+          "Link-Up / Creation": 53.018203409506825,
+          "Carrying / 1v1": 53.12142828714202,
+          "Physicality": 51.80030888921456,
+          "Defensive Activity": 53.247117448123824
+        }
+      },
+      {
+        "overall": 54.209628201209,
+        "abilities": {
+          "Finishing": 54.434699408275755,
+          "Box Threat": 54.41777469611367,
+          "Link-Up / Creation": 54.20239176439243,
+          "Carrying / 1v1": 54.30226089413919,
+          "Physicality": 53.06857847544548,
+          "Defensive Activity": 54.41777469611367
+        }
+      },
+      {
+        "overall": 55.363706446481224,
+        "abilities": {
+          "Finishing": 55.56860767704089,
+          "Box Threat": 55.5534869516262,
+          "Link-Up / Creation": 55.35468195446954,
+          "Carrying / 1v1": 55.449604469863964,
+          "Physicality": 54.31983359693124,
+          "Defensive Activity": 55.5534869516262
+        }
+      },
+      {
+        "overall": 56.48699578576842,
+        "abilities": {
+          "Finishing": 56.668926587437596,
+          "Box Threat": 56.655795905506004,
+          "Link-Up / Creation": 56.47646487934699,
+          "Carrying / 1v1": 56.56487380319491,
+          "Physicality": 55.55435772650205,
+          "Defensive Activity": 56.655795905506004
+        }
+      },
+      {
+        "overall": 57.58077309834451,
+        "abilities": {
+          "Finishing": 57.73712644242513,
+          "Box Threat": 57.726153875215395,
+          "Link-Up / Creation": 57.56905091020215,
+          "Carrying / 1v1": 57.649404607223346,
+          "Physicality": 56.772432867643644,
+          "Defensive Activity": 57.726153875215395
+        }
+      },
+      {
+        "overall": 58.64624424584273,
+        "abilities": {
+          "Finishing": 58.77459298938328,
+          "Box Threat": 58.765930188647374,
+          "Link-Up / Creation": 58.63367564099621,
+          "Carrying / 1v1": 58.70445899699761,
+          "Physicality": 57.97433901049367,
+          "Defensive Activity": 58.765930188647374
+        }
+      },
+      {
+        "overall": 59.684548988764995,
+        "abilities": {
+          "Finishing": 59.782633410813204,
+          "Box Threat": 59.77641702846154,
+          "Link-Up / Creation": 59.671505153679085,
+          "Carrying / 1v1": 59.731230516089084,
+          "Physicality": 59.160353670252206,
+          "Defensive Activity": 59.77641702846154
+        }
+      },
+      {
+        "overall": 60.69676549800945,
+        "abilities": {
+          "Finishing": 60.7624818129504,
+          "Box Threat": 60.75883478939197,
+          "Link-Up / Creation": 60.68364084463431,
+          "Carrying / 1v1": 60.73084875491364,
+          "Physicality": 60.330751497457655,
+          "Defensive Activity": 60.75883478939197
+        }
+      },
+      {
+        "overall": 61.68391449992955,
+        "abilities": {
+          "Finishing": 61.71530426069672,
+          "Box Threat": 61.71433699522842,
+          "Link-Up / Creation": 61.671123854437546,
+          "Carrying / 1v1": 61.70438359912095,
+          "Physicality": 61.48580395094899,
+          "Defensive Activity": 61.71433699522842
+        }
+      },
+      {
+        "overall": 62.64696308929888,
+        "abilities": {
+          "Finishing": 62.642203402019234,
+          "Box Threat": 62.64401481712337,
+          "Link-Up / Creation": 62.63493913845268,
+          "Carrying / 1v1": 62.65284914229609,
+          "Physicality": 62.62577902550818,
+          "Defensive Activity": 62.64401481712337
+        }
+      },
+      {
+        "overall": 63.58682824091195,
+        "abilities": {
+          "Finishing": 63.54422272033406,
+          "Box Threat": 63.54890123043444,
+          "Link-Up / Creation": 63.576019211786544,
+          "Carrying / 1v1": 63.577207293630494,
+          "Physicality": 63.750941027203446,
+          "Defensive Activity": 63.54890123043444
+        }
+      },
+      {
+        "overall": 64.5043800473391,
+        "abilities": {
+          "Finishing": 64.42235044932495,
+          "Box Threat": 64.4299748433952,
+          "Link-Up / Creation": 64.49524759859712,
+          "Carrying / 1v1": 64.47837110805156,
+          "Physicality": 64.8615503903352,
+          "Defensive Activity": 64.42997484339521
+        }
+      },
+      {
+        "overall": 65.40044470750988,
+        "abilities": {
+          "Finishing": 65.27752318104126,
+          "Box Threat": 65.28816342744793,
+          "Link-Up / Creation": 65.39346201263041,
+          "Carrying / 1v1": 65.35720786349496,
+          "Physicality": 65.95786353065283,
+          "Defensive Activity": 65.28816342744791
+        }
+      },
+      {
+        "overall": 66.27580728828768,
+        "abilities": {
+          "Finishing": 66.11062919494577,
+          "Box Threat": 66.12434717601207,
+          "Link-Up / Creation": 66.27145729310749,
+          "Carrying / 1v1": 66.21454190751955,
+          "Physicality": 67.04013273017969,
+          "Defensive Activity": 66.12434717601208
+        }
+      },
+      {
+        "overall": 67.13121427896856,
+        "abilities": {
+          "Finishing": 66.92251153276784,
+          "Box Threat": 66.93936171575183,
+          "Link-Up / Creation": 67.12998811763849,
+          "Carrying / 1v1": 67.05115729325752,
+          "Physicality": 68.10860604956122,
+          "Defensive Activity": 66.93936171575183
+        }
+      },
+      {
+        "overall": 67.96737595665637,
+        "abilities": {
+          "Finishing": 67.71397084151356,
+          "Box Threat": 67.73400089199812,
+          "Link-Up / Creation": 67.96977151167542,
+          "Carrying / 1v1": 67.8678002227301,
+          "Physicality": 69.16352726435774,
+          "Defensive Activity": 67.73400089199812
+        }
+      },
+      {
+        "overall": 68.78496857870672,
+        "abilities": {
+          "Finishing": 68.48576800477365,
+          "Box Threat": 68.50901934784324,
+          "Link-Up / Creation": 68.79148917208434,
+          "Carrying / 1v1": 68.665181313812,
+          "Physicality": 70.2051358221434,
+          "Defensive Activity": 68.50901934784324
+        }
+      },
+      {
+        "overall": 69.58463641686336,
+        "abilities": {
+          "Finishing": 69.23862658049146,
+          "Box Threat": 69.26513491452141,
+          "Link-Up / Creation": 69.59578962070677,
+          "Carrying / 1v1": 69.44397770556832,
+          "Physicality": 71.23366681765728,
+          "Defensive Activity": 69.26513491452141
+        }
+      },
+      {
+        "overall": 70.36699364630927,
+        "abilities": {
+          "Finishing": 69.97323506159088,
+          "Box Threat": 70.00303082899046,
+          "Link-Up / Creation": 70.38329020224742,
+          "Carrying / 1v1": 70.2048350152955,
+          "Physicality": 72.24935098359066,
+          "Defensive Activity": 70.00303082899046
+        }
+      },
+      {
+        "overall": 71.13262610160842,
+        "abilities": {
+          "Finishing": 70.69024897430694,
+          "Box Threat": 70.72335779311504,
+          "Link-Up / Creation": 71.15457893946154,
+          "Carrying / 1v1": 70.94836915935205,
+          "Physicality": 73.25241469488546,
+          "Defensive Activity": 70.72335779311504
+        }
+      }
+    ],
+    "role": [
+      {
+        "overall": 19.436013472051677,
+        "abilities": {
+          "Finishing": 18.85725357708301,
+          "Box Threat": 18.90783817375513,
+          "Link-Up / Creation": 19.40050428037026,
+          "Carrying / 1v1": 19.235612572547304,
+          "Physicality": 22.462227174078702,
+          "Defensive Activity": 18.90783817375513
+        }
+      },
+      {
+        "overall": 21.746368981842835,
+        "abilities": {
+          "Finishing": 21.295531171324175,
+          "Box Threat": 21.3339829050964,
+          "Link-Up / Creation": 21.724522092308558,
+          "Carrying / 1v1": 21.585531783360324,
+          "Physicality": 24.12074228985371,
+          "Defensive Activity": 21.3339829050964
+        }
+      },
+      {
+        "overall": 23.965894138399776,
+        "abilities": {
+          "Finishing": 23.62903374934919,
+          "Box Threat": 23.656887435103997,
+          "Link-Up / Creation": 23.955072291681713,
+          "Carrying / 1v1": 23.84132841207116,
+          "Physicality": 25.758759227676503,
+          "Defensive Activity": 23.656887435103993
+        }
+      },
+      {
+        "overall": 26.100067281609967,
+        "abilities": {
+          "Finishing": 25.864368966217995,
+          "Box Threat": 25.883004276361277,
+          "Link-Up / Creation": 26.097970167932523,
+          "Carrying / 1v1": 26.008611234086157,
+          "Physicality": 27.376129004379827,
+          "Defensive Activity": 25.883004276361273
+        }
+      },
+      {
+        "overall": 28.153928087977835,
+        "abilities": {
+          "Finishing": 28.00760057902135,
+          "Box Threat": 28.018259205730498,
+          "Link-Up / Creation": 28.158556464500208,
+          "Carrying / 1v1": 28.092547934123925,
+          "Physicality": 28.972776312170037,
+          "Defensive Activity": 28.018259205730494
+        }
+      },
+      {
+        "overall": 30.132120927763378,
+        "abilities": {
+          "Finishing": 30.064303255246514,
+          "Box Threat": 30.06810393792496,
+          "Link-Up / Creation": 30.141744832032195,
+          "Carrying / 1v1": 30.09790795119496,
+          "Physicality": 30.54868844470697,
+          "Defensive Activity": 30.06810393792496
+        }
+      },
+      {
+        "overall": 32.03893315957832,
+        "abilities": {
+          "Finishing": 32.03961088725458,
+          "Box Threat": 32.03756260219023,
+          "Link-Up / Creation": 32.05206369887764,
+          "Carrying / 1v1": 32.02910039565941,
+          "Physicality": 32.103905816686755,
+          "Defensive Activity": 32.03756260219022
+        }
+      },
+      {
+        "overall": 33.878329040530964,
+        "abilities": {
+          "Finishing": 33.938259292795095,
+          "Box Threat": 33.93127285629144,
+          "Link-Up / Creation": 33.89369331038422,
+          "Carrying / 1v1": 33.89020769019241,
+          "Physicality": 33.63851383458703,
+          "Defensive Activity": 33.931272856291436
+        }
+      },
+      {
+        "overall": 35.65397982799727,
+        "abilities": {
+          "Finishing": 35.76462404785523,
+          "Box Threat": 35.75352234608695,
+          "Link-Up / Creation": 35.67049857507872,
+          "Carrying / 1v1": 35.68501548943012,
+          "Physicality": 35.1526359159189,
+          "Defensive Activity": 35.753522346086946
+        }
+      },
+      {
+        "overall": 37.36929056404976,
+        "abilities": {
+          "Finishing": 37.522754086912336,
+          "Box Threat": 37.50828111403817,
+          "Link-Up / Creation": 37.38605826128507,
+          "Carrying / 1v1": 37.4170393520174,
+          "Physicality": 36.646427487005965,
+          "Defensive Activity": 37.50828111403817
+        }
+      },
+      {
+        "overall": 39.02742396241161,
+        "abilities": {
+          "Finishing": 39.216401612727495,
+          "Box Threat": 39.19923047224572,
+          "Link-Up / Creation": 39.043691008668254,
+          "Carrying / 1v1": 39.08954857084738,
+          "Physicality": 38.12007081631315,
+          "Defensive Activity": 39.19923047224572
+        }
+      },
+      {
+        "overall": 40.63132175805153,
+        "abilities": {
+          "Finishing": 40.849048779913815,
+          "Box Threat": 40.82978878194586,
+          "Link-Up / Creation": 40.64647855283883,
+          "Carrying / 1v1": 40.705587510146614,
+          "Physicality": 39.573770562733564,
+          "Defensive Activity": 40.82978878194586
+        }
+      },
+      {
+        "overall": 42.18372382919061,
+        "abilities": {
+          "Finishing": 42.42393155096896,
+          "Box Threat": 42.40313451937582,
+          "Link-Up / Creation": 42.19728650527354,
+          "Carrying / 1v1": 42.267994749843645,
+          "Physicality": 41.00774993685242,
+          "Defensive Activity": 42.40313451937582
+        }
+      },
+      {
+        "overall": 43.687185358940994,
+        "abilities": {
+          "Finishing": 43.944061068150475,
+          "Box Threat": 43.922226955515086,
+          "Link-Up / Creation": 43.69878298359974,
+          "Carrying / 1v1": 43.77942029683718,
+          "Physicality": 42.42224738873751,
+          "Defensive Activity": 43.92222695551508
+        }
+      },
+      {
+        "overall": 45.14409226771594,
+        "abilities": {
+          "Finishing": 45.41224283774075,
+          "Box Threat": 45.38982473280217,
+          "Link-Up / Creation": 45.15345534728551,
+          "Carrying / 1v1": 45.242341088111274,
+          "Physicality": 43.81751374878878,
+          "Defensive Activity": 45.38982473280216
+        }
+      },
+      {
+        "overall": 46.55667511686737,
+        "abilities": {
+          "Finishing": 46.83109398348096,
+          "Box Threat": 46.80850258417969,
+          "Link-Up / Creation": 46.56362525977065,
+          "Carrying / 1v1": 46.65907498111423,
+          "Physicality": 45.193809759074675,
+          "Defensive Activity": 46.80850258417969
+        }
+      },
+      {
+        "overall": 47.927021657837145,
+        "abilities": {
+          "Finishing": 48.20305879208791,
+          "Box Threat": 48.180666407643194,
+          "Link-Up / Creation": 47.931462269087326,
+          "Carrying / 1v1": 48.03179340158953,
+          "Physicality": 46.551403941744546,
+          "Defensive Activity": 48.180666407643194
+        }
+      },
+      {
+        "overall": 49.25708817872331,
+        "abilities": {
+          "Finishing": 49.53042274483658,
+          "Box Threat": 49.50856688196272,
+          "Link-Up / Creation": 49.25899607423613,
+          "Carrying / 1v1": 49.36253279743592,
+          "Physicality": 47.89057075883075,
+          "Defensive Activity": 49.50856688196272
+        }
+      },
+      {
+        "overall": 50.54870978096661,
+        "abilities": {
+          "Finishing": 50.8153252044241,
+          "Box Threat": 50.79431178566891,
+          "Link-Up / Creation": 50.54812762334581,
+          "Carrying / 1v1": 50.65320502860885,
+          "Physicality": 49.21158902428315,
+          "Defensive Activity": 50.79431178566891
+        }
+      },
+      {
+        "overall": 51.80360970235665,
+        "abilities": {
+          "Finishing": 52.059770905060105,
+          "Box Threat": 52.03987716113429,
+          "Link-Up / Creation": 51.80063917138981,
+          "Carrying / 1v1": 51.90560680708934,
+          "Physicality": 50.514740534612486,
+          "Defensive Activity": 52.03987716113429
+        }
+      },
+      {
+        "overall": 53.02340778832637,
+        "abilities": {
+          "Finishing": 53.265640375416794,
+          "Box Threat": 53.247117448123824,
+          "Link-Up / Creation": 53.018203409506825,
+          "Carrying / 1v1": 53.12142828714202,
+          "Physicality": 51.80030888921456,
+          "Defensive Activity": 53.247117448123824
+        }
+      },
+      {
+        "overall": 54.209628201209,
+        "abilities": {
+          "Finishing": 54.434699408275755,
+          "Box Threat": 54.41777469611367,
+          "Link-Up / Creation": 54.20239176439243,
+          "Carrying / 1v1": 54.30226089413919,
+          "Physicality": 53.06857847544548,
+          "Defensive Activity": 54.41777469611367
+        }
+      },
+      {
+        "overall": 55.363706446481224,
+        "abilities": {
+          "Finishing": 55.56860767704089,
+          "Box Threat": 55.5534869516262,
+          "Link-Up / Creation": 55.35468195446954,
+          "Carrying / 1v1": 55.449604469863964,
+          "Physicality": 54.31983359693124,
+          "Defensive Activity": 55.5534869516262
+        }
+      },
+      {
+        "overall": 56.48699578576842,
+        "abilities": {
+          "Finishing": 56.668926587437596,
+          "Box Threat": 56.655795905506004,
+          "Link-Up / Creation": 56.47646487934699,
+          "Carrying / 1v1": 56.56487380319491,
+          "Physicality": 55.55435772650205,
+          "Defensive Activity": 56.655795905506004
+        }
+      },
+      {
+        "overall": 57.58077309834451,
+        "abilities": {
+          "Finishing": 57.73712644242513,
+          "Box Threat": 57.726153875215395,
+          "Link-Up / Creation": 57.56905091020215,
+          "Carrying / 1v1": 57.649404607223346,
+          "Physicality": 56.772432867643644,
+          "Defensive Activity": 57.726153875215395
+        }
+      },
+      {
+        "overall": 58.64624424584273,
+        "abilities": {
+          "Finishing": 58.77459298938328,
+          "Box Threat": 58.765930188647374,
+          "Link-Up / Creation": 58.63367564099621,
+          "Carrying / 1v1": 58.70445899699761,
+          "Physicality": 57.97433901049367,
+          "Defensive Activity": 58.765930188647374
+        }
+      },
+      {
+        "overall": 59.684548988764995,
+        "abilities": {
+          "Finishing": 59.782633410813204,
+          "Box Threat": 59.77641702846154,
+          "Link-Up / Creation": 59.671505153679085,
+          "Carrying / 1v1": 59.731230516089084,
+          "Physicality": 59.160353670252206,
+          "Defensive Activity": 59.77641702846154
+        }
+      },
+      {
+        "overall": 60.69676549800945,
+        "abilities": {
+          "Finishing": 60.7624818129504,
+          "Box Threat": 60.75883478939197,
+          "Link-Up / Creation": 60.68364084463431,
+          "Carrying / 1v1": 60.73084875491364,
+          "Physicality": 60.330751497457655,
+          "Defensive Activity": 60.75883478939197
+        }
+      },
+      {
+        "overall": 61.68391449992955,
+        "abilities": {
+          "Finishing": 61.71530426069672,
+          "Box Threat": 61.71433699522842,
+          "Link-Up / Creation": 61.671123854437546,
+          "Carrying / 1v1": 61.70438359912095,
+          "Physicality": 61.48580395094899,
+          "Defensive Activity": 61.71433699522842
+        }
+      },
+      {
+        "overall": 62.64696308929888,
+        "abilities": {
+          "Finishing": 62.642203402019234,
+          "Box Threat": 62.64401481712337,
+          "Link-Up / Creation": 62.63493913845268,
+          "Carrying / 1v1": 62.65284914229609,
+          "Physicality": 62.62577902550818,
+          "Defensive Activity": 62.64401481712337
+        }
+      },
+      {
+        "overall": 63.58682824091195,
+        "abilities": {
+          "Finishing": 63.54422272033406,
+          "Box Threat": 63.54890123043444,
+          "Link-Up / Creation": 63.576019211786544,
+          "Carrying / 1v1": 63.577207293630494,
+          "Physicality": 63.750941027203446,
+          "Defensive Activity": 63.54890123043444
+        }
+      },
+      {
+        "overall": 64.5043800473391,
+        "abilities": {
+          "Finishing": 64.42235044932495,
+          "Box Threat": 64.4299748433952,
+          "Link-Up / Creation": 64.49524759859712,
+          "Carrying / 1v1": 64.47837110805156,
+          "Physicality": 64.8615503903352,
+          "Defensive Activity": 64.42997484339521
+        }
+      },
+      {
+        "overall": 65.40044470750988,
+        "abilities": {
+          "Finishing": 65.27752318104126,
+          "Box Threat": 65.28816342744793,
+          "Link-Up / Creation": 65.39346201263041,
+          "Carrying / 1v1": 65.35720786349496,
+          "Physicality": 65.95786353065283,
+          "Defensive Activity": 65.28816342744791
+        }
+      },
+      {
+        "overall": 66.27580728828768,
+        "abilities": {
+          "Finishing": 66.11062919494577,
+          "Box Threat": 66.12434717601207,
+          "Link-Up / Creation": 66.27145729310749,
+          "Carrying / 1v1": 66.21454190751955,
+          "Physicality": 67.04013273017969,
+          "Defensive Activity": 66.12434717601208
+        }
+      },
+      {
+        "overall": 67.13121427896856,
+        "abilities": {
+          "Finishing": 66.92251153276784,
+          "Box Threat": 66.93936171575183,
+          "Link-Up / Creation": 67.12998811763849,
+          "Carrying / 1v1": 67.05115729325752,
+          "Physicality": 68.10860604956122,
+          "Defensive Activity": 66.93936171575183
+        }
+      },
+      {
+        "overall": 67.96737595665637,
+        "abilities": {
+          "Finishing": 67.71397084151356,
+          "Box Threat": 67.73400089199812,
+          "Link-Up / Creation": 67.96977151167542,
+          "Carrying / 1v1": 67.8678002227301,
+          "Physicality": 69.16352726435774,
+          "Defensive Activity": 67.73400089199812
+        }
+      },
+      {
+        "overall": 68.78496857870672,
+        "abilities": {
+          "Finishing": 68.48576800477365,
+          "Box Threat": 68.50901934784324,
+          "Link-Up / Creation": 68.79148917208434,
+          "Carrying / 1v1": 68.665181313812,
+          "Physicality": 70.2051358221434,
+          "Defensive Activity": 68.50901934784324
+        }
+      },
+      {
+        "overall": 69.58463641686336,
+        "abilities": {
+          "Finishing": 69.23862658049146,
+          "Box Threat": 69.26513491452141,
+          "Link-Up / Creation": 69.59578962070677,
+          "Carrying / 1v1": 69.44397770556832,
+          "Physicality": 71.23366681765728,
+          "Defensive Activity": 69.26513491452141
+        }
+      },
+      {
+        "overall": 70.36699364630927,
+        "abilities": {
+          "Finishing": 69.97323506159088,
+          "Box Threat": 70.00303082899046,
+          "Link-Up / Creation": 70.38329020224742,
+          "Carrying / 1v1": 70.2048350152955,
+          "Physicality": 72.24935098359066,
+          "Defensive Activity": 70.00303082899046
+        }
+      },
+      {
+        "overall": 71.13262610160842,
+        "abilities": {
+          "Finishing": 70.69024897430694,
+          "Box Threat": 70.72335779311504,
+          "Link-Up / Creation": 71.15457893946154,
+          "Carrying / 1v1": 70.94836915935205,
+          "Physicality": 73.25241469488546,
+          "Defensive Activity": 70.72335779311504
+        }
+      }
+    ]
+  }
+}

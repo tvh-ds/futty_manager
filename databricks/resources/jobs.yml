@@ -1,0 +1,37 @@
+resources:
+  jobs:
+    release:
+      name: scout-validated-release
+      max_concurrent_runs: 1
+      timeout_seconds: 1800
+      parameters:
+        - name: release_id
+          default: synthetic-2024-25-v1
+      tasks:
+        - task_key: transform
+          environment_key: scout
+          spark_python_task:
+            python_file: ../jobs/transform.py
+            parameters:
+              - --bundle
+              - /Volumes/${var.catalog}/${var.schema}/${var.volume}/input/{{job.parameters.release_id}}/bundle.json
+              - --catalog
+              - ${var.catalog}.${var.schema}
+              - --output
+              - /Volumes/${var.catalog}/${var.schema}/${var.volume}/output
+        - task_key: evaluate
+          depends_on:
+            - task_key: transform
+          environment_key: scout
+          spark_python_task:
+            python_file: ../jobs/evaluate.py
+            parameters:
+              - --bundle
+              - /Volumes/${var.catalog}/${var.schema}/${var.volume}/output/{{job.parameters.release_id}}/bundle.json
+      environments:
+        - environment_key: scout
+          spec:
+            environment_version: "4"
+            dependencies:
+              - ../../dist/*.whl
+              - mlflow==3.16.1

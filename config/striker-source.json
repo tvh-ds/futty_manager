@@ -1,0 +1,8 @@
+{
+  "provider": "api-football",
+  "enabled": false,
+  "season": 2025,
+  "publication_approved": false,
+  "observed_through": null,
+  "notes": "User-selected completed 2025/26 performance window, separate from Liverpool 2026/27 squad membership. Credentials remain in SCOUT_API_FOOTBALL_KEY. A reviewed sporting observation cutoff and provider/player/team mappings are required; retrieval time is not a match cutoff. Complete five-league striker coverage and public display rights must be verified before activation. FotMob crawling is disabled; FBref advanced data is unavailable."
+}

@@ -1,0 +1,40 @@
+/* One sculpted card layout for catalogue, pitch and bench. */
+.pc-face { --pc-accent:#dce6e9; --pc-light:#647279; --pc-body:#233039; --pc-deep:#0c1720; position:relative; isolation:isolate; container-type:size; width:92%; margin-inline:auto; height:320px; color:#f3f5f2; font-variant-numeric:tabular-nums; transition:transform 220ms cubic-bezier(.16,1,.3,1),filter 220ms; }
+.pc-tier-unrated { --pc-accent:#a4b5b5; --pc-light:#c0cbc6; --pc-body:#9fadad; --pc-deep:#7e9898; --pc-ink:#142526; }
+.pc-tier-graphite { --pc-accent:#8a9fa6; --pc-light:#adbec3; --pc-body:#879ca5; --pc-deep:#637d85; --pc-ink:#102128; }
+.pc-tier-bronze { --pc-accent:#b0814e; --pc-light:#d7b787; --pc-body:#b48b5c; --pc-deep:#986a3d; --pc-ink:#30200e; }
+.pc-tier-silver { --pc-accent:#a7b1b5; --pc-light:#d0d6d3; --pc-body:#abb5b5; --pc-deep:#8f9c9e; --pc-ink:#202b2e; }
+.pc-tier-gold { --pc-accent:#c6a652; --pc-light:#dcc576; --pc-body:#cbb15c; --pc-deep:#b09443; --pc-ink:#34250c; }
+.pc-tier-elite { --pc-accent:#d0b357; --pc-light:#e5d394; --pc-body:#d8bd6d; --pc-deep:#ad914c; --pc-ink:#32230e; }
+.pc-face:before { content:''; position:absolute; inset:-17%; z-index:-2; background:radial-gradient(ellipse at 50% 45%,var(--pc-accent) 0%,transparent 67%); opacity:var(--pc-glow,0); pointer-events:none; }
+.pc-face:after { content:''; position:absolute; left:10%; right:10%; bottom:-2%; height:9%; border-radius:50%; background:#03080d99; filter:blur(8px); z-index:-2; pointer-events:none; }
+.pc-frame { position:absolute; inset:0; width:100%; height:100%; z-index:-1; filter:drop-shadow(3px 14px 9px #0009); }
+.pc-field { stroke-linejoin:round; }
+.pc-top { position:absolute; left:12%; top:13%; z-index:3; display:flex; flex-direction:column; align-items:center; width:27%; min-width:0; }
+.pc-top strong { font-size:min(48px,15cqh,var(--pc-ovr-font,21cqw)); line-height:1.05; font-weight:600; letter-spacing:-.03em; color:var(--pc-ink); text-shadow:none; max-width:100%; white-space:nowrap; }
+.pc-top small { display:none; }
+.pc-top > span { font-size:min(18px,7cqw); line-height:1.1; font-weight:400; color:var(--pc-ink); white-space:nowrap; }
+.pc-identity-marks { display:flex; flex-direction:column; align-items:center; gap:3.5cqw; margin-top:4cqw; color:var(--pc-ink); }
+.pc-identity-marks .fi { display:block; object-fit:cover; width:11cqw; height:7.2cqw; border-radius:1px; box-shadow:0 2px 3px #0006; }
+.pc-club-logo { width:13cqw; height:14cqw; object-fit:contain; filter:drop-shadow(0 2px 2px #0007); }
+.pc-club-unknown { width:12cqw; height:12cqw; opacity:.75; }
+.pc-identity-marks > svg { width:10cqw; height:10cqw; }
+.pc-portrait { position:absolute; top:9%; right:5%; width:62%; height:49%; object-fit:contain; object-position:center bottom; filter:drop-shadow(3px 7px 4px #0007); z-index:1; }
+.pc-fallback { display:flex; align-items:center; justify-content:center; }
+.pc-fallback svg { width:80%; height:100%; fill:var(--pc-body); stroke:var(--pc-accent); stroke-width:.8; }
+.pc-fallback .pc-seam { fill:none; }
+.pc-fallback text { fill:var(--pc-ink); stroke:none; font:600 27px 'Source Sans 3',sans-serif; }
+.pc-name { position:absolute; top:58%; height:12%; left:12%; right:12%; padding:0; display:flex; align-items:center; justify-content:center; text-align:center; font-size:min(23px,7cqh,var(--pc-name-font,9cqw)); font-weight:700; line-height:1.12; letter-spacing:-.01em; color:var(--pc-ink); text-transform:uppercase; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; z-index:2; border-bottom:1px solid color-mix(in srgb,var(--pc-ink) 35%,transparent); }
+.pc-abilities { position:absolute; top:72%; bottom:13%; left:18%; right:18%; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:repeat(3,minmax(0,1fr)); column-gap:8%; row-gap:0; z-index:2; }
+.pc-abilities:after { content:''; position:absolute; left:50%; top:6%; bottom:6%; width:1px; background:color-mix(in srgb,var(--pc-ink) 25%,transparent); }
+.pc-abilities > div { display:flex; align-items:center; justify-content:center; gap:2cqw; min-width:0; line-height:1; white-space:nowrap; }
+.pc-abilities b { min-width:0; font-weight:600; color:var(--pc-ink); font-size:8.5cqw; }
+.pc-abilities span { font-size:min(5cqw,3.7cqh); font-weight:400; color:var(--pc-ink); }
+.pc-compact { height:198px; }
+.pc-compact .pc-top small { display:none; }
+.pc-compact .pc-identity-marks { gap:2cqw; margin-top:3cqw; }
+.ss-card .pc-face { height:100%; }
+.pl-card-button:hover .pc-face { transform:translateY(-4px) rotateX(2deg); filter:brightness(1.07); }
+.pl-card-button { perspective:900px; }
+@media(max-width:600px) { .players-page .pc-face { height:279px; } }
+@media(prefers-reduced-motion:reduce) { .pc-face { transition:none; }.pl-card-button:hover .pc-face { transform:none; } }

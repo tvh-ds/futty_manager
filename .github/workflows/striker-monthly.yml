@@ -1,0 +1,70 @@
+name: Monthly striker evidence refresh
+on:
+  schedule:
+    - cron: '17 5 1 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: striker-monthly
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: batch
+    env:
+      SCOUT_CLOUD_ENABLED: ${{ vars.CLOUD_ENABLED }}
+      SCOUT_STRIKER_STORAGE_ACCOUNT: ${{ vars.AZURE_STORAGE_ACCOUNT }}
+      SCOUT_STRIKER_BOOTSTRAP: ${{ vars.STRIKER_STATE_BOOTSTRAP }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: '0.10.6'
+      - run: uv sync --frozen --extra cloud
+      - name: Verify credit protection before cloud access
+        if: vars.CLOUD_ENABLED == 'true'
+        env:
+          CREDIT_RECORD: ${{ vars.CREDIT_RECORD }}
+        run: |
+          uv run python -c 'import os,pathlib; pathlib.Path(".cache").mkdir(exist_ok=True); pathlib.Path(".cache/striker-credit-record.json").write_text(os.environ["CREDIT_RECORD"])'
+          uv run python scripts/credit_guard.py .cache/striker-credit-record.json
+      - name: Require private state for live collection
+        run: |
+          uv run python - <<'PY'
+          import json, os
+          config = json.load(open('config/striker-source.json'))
+          if config.get('enabled') and (os.environ.get('SCOUT_CLOUD_ENABLED') != 'true' or not os.environ.get('SCOUT_STRIKER_STORAGE_ACCOUNT')):
+              raise SystemExit('Live monthly collection requires configured private durable state. No raw data is stored in GitHub caches or artifacts.')
+          PY
+      - uses: azure/login@v2
+        if: vars.CLOUD_ENABLED == 'true'
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Restore private runner history
+        id: restore
+        if: vars.CLOUD_ENABLED == 'true'
+        run: |
+          if [ "$SCOUT_STRIKER_BOOTSTRAP" = "true" ]; then
+            uv run scout striker-state restore "$SCOUT_STRIKER_STORAGE_ACCOUNT" --allow-empty
+          else
+            uv run scout striker-state restore "$SCOUT_STRIKER_STORAGE_ACCOUNT"
+          fi
+      - run: uv run scout refresh-strikers
+        env:
+          SCOUT_API_FOOTBALL_KEY: ${{ secrets.SCOUT_API_FOOTBALL_KEY }}
+          SCOUT_PITCHAPI_KEY: ${{ secrets.SCOUT_PITCHAPI_KEY }}
+      - name: Preserve private state and quota checkpoints
+        if: always() && steps.restore.outcome == 'success'
+        run: uv run scout striker-state save "$SCOUT_STRIKER_STORAGE_ACCOUNT"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: striker-refresh-evidence
+          path: data/strikers/refresh-status.json
+          retention-days: 90
+          if-no-files-found: warn

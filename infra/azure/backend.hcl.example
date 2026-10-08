@@ -1,0 +1,7 @@
+# Create a dedicated state account/container first; never store credentials here.
+resource_group_name  = "REPLACE-state-resource-group"
+storage_account_name = "REPLACEstateaccount"
+container_name       = "tfstate"
+key                  = "scout/production.tfstate"
+use_azuread_auth     = true
+use_oidc            = true

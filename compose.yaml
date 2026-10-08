@@ -1,0 +1,53 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: scout
+      POSTGRES_PASSWORD: ${SCOUT_LOCAL_POSTGRES_PASSWORD:-local-development-only}
+      POSTGRES_DB: scout
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scout -d scout"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  seed:
+    build: .
+    command: ["sh", "-c", "alembic upgrade head && scout demo"]
+    environment:
+      SCOUT_DATABASE_URL: postgresql+psycopg://scout:${SCOUT_LOCAL_POSTGRES_PASSWORD:-local-development-only}@postgres/scout
+      SCOUT_RELEASE_ROOT: /app/data/releases
+    volumes: ["scout-data:/app/data"]
+    depends_on:
+      postgres: { condition: service_healthy }
+  api:
+    build: .
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      SCOUT_DATABASE_URL: postgresql+psycopg://scout:${SCOUT_LOCAL_POSTGRES_PASSWORD:-local-development-only}@postgres/scout
+      SCOUT_CORS_ORIGINS: '["http://localhost:8080","http://127.0.0.1:8080"]'
+      SCOUT_ALLOW_SYNTHETIC: "true"
+    depends_on:
+      seed: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health/ready')"]
+      interval: 15s
+      timeout: 5s
+      start_period: 30s
+      retries: 5
+  frontend:
+    build: frontend
+    ports: ["127.0.0.1:8080:8080"]
+    depends_on:
+      api: { condition: service_healthy }
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v3.5.0
+    profiles: ["ml"]
+    command: ["mlflow", "server", "--host", "0.0.0.0", "--port", "5000", "--backend-store-uri", "sqlite:////mlflow/mlflow.db", "--artifacts-destination", "/mlflow/artifacts"]
+    ports: ["127.0.0.1:5000:5000"]
+    volumes: ["mlflow-data:/mlflow"]
+volumes:
+  postgres-data:
+  scout-data:
+  mlflow-data:

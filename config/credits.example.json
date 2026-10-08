@@ -1,0 +1,7 @@
+{
+  "checked_at": null,
+  "expires_at": null,
+  "remaining_eur": null,
+  "spending_protection_confirmed": false,
+  "source": "Manual verification against the subscription portal; not a live balance API"
+}

@@ -1,0 +1,8 @@
+subscription_id   = "00000000-0000-0000-0000-000000000000"
+github_repository = "OWNER/REPOSITORY"
+budget_email      = "you@example.com"
+budget_start      = "2026-10-01T00:00:00Z"
+monthly_budget    = 10
+deploy_api        = false
+allow_synthetic   = false
+api_image         = "ghcr.io/owner/scout-api:replace-with-tested-release"

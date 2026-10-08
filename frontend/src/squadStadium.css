@@ -1,0 +1,110 @@
+/* Reference-led stadium presentation, scoped away from the player catalogue. */
+.squad-studio.ss-stadium { background:#080e14; color:#f4efd9; }
+.squad-studio.ss-stadium .ss-header { height:42px; padding:0 24px; background:#111922; border-bottom-color:#39414a; gap:30px; }
+.squad-studio.ss-stadium .ss-header nav a.active { border-color:#e2c074; }
+.squad-studio.ss-stadium .ss-brand { font-size:19px; }
+.squad-studio.ss-stadium main { max-width:none; padding:0 12px; display:grid; grid-template-columns:minmax(260px,.6fr) minmax(0,1fr); column-gap:18px; }
+.squad-studio.ss-stadium .ss-titlebar { padding:7px 10px; min-height:55px; gap:10px; }
+.squad-studio.ss-stadium .ss-club-mark { width:34px; height:42px; }
+.squad-studio.ss-stadium .ss-club-title h1 { font-size:23px; margin:0; white-space:nowrap; }
+.squad-studio.ss-stadium .ss-club-title h1 span { font-size:18px; color:#c2c9cc; }
+.squad-studio.ss-stadium .ss-club-title p { font-size:10px; margin:0; color:#b0bbbf; }
+.squad-studio.ss-stadium .ss-catalogue { gap:12px; }
+.squad-studio.ss-stadium .ss-catalogue label { font-size:8px; gap:0; }
+.squad-studio.ss-stadium .ss-catalogue select { min-width:78px; max-width:130px; padding:3px 4px; font-size:11px; }
+.squad-studio.ss-stadium .ss-toolbar { border:0; min-height:55px; padding:5px 0; gap:0; }
+.squad-studio.ss-stadium .ss-toolbar button { min-height:34px; padding:7px 8px; font-size:12px; }
+.squad-studio.ss-stadium .ss-formation-label { padding-right:16px; margin-right:4px; gap:8px; }
+.squad-studio.ss-stadium .ss-formation-label > span { display:none; }
+.squad-studio.ss-stadium .ss-formation-label > svg { right:12px; }
+.squad-studio.ss-stadium .ss-formation-label select { font-size:18px; color:#ead99f; }
+.squad-studio.ss-stadium .ss-toolbar-end { gap:0; }
+.squad-studio.ss-stadium .ss-summary { grid-column:1/-1; padding:3px 10px 5px; min-height:30px; gap:26px; align-items:center; border-top:1px solid #27353d; }
+.squad-studio.ss-stadium .ss-summary > div { display:flex; align-items:center; gap:10px; }
+.squad-studio.ss-stadium .ss-summary > div > span { font-size:8px; color:#c8cfca; letter-spacing:.07em; }
+.squad-studio.ss-stadium .ss-summary strong { font-size:21px; line-height:1; color:#f2dea4; }
+.squad-studio.ss-stadium .ss-summary .ss-demo-notice { font-size:9px!important; line-height:1.25; margin:0 0 0 auto; }
+.squad-studio.ss-stadium .ss-feedback, .squad-studio.ss-stadium .ss-error,
+.squad-studio.ss-stadium .ss-pitch-scroll, .squad-studio.ss-stadium .ss-selection-bar,
+.squad-studio.ss-stadium .ss-pan-hint, .squad-studio.ss-stadium .ss-footer { grid-column:1/-1; }
+.squad-studio.ss-stadium .ss-feedback:empty { display:none; }
+.squad-studio.ss-stadium .ss-stage { height:var(--ss-fit-height,calc(100svh - 135px)); min-height:390px; max-height:none; border:0; border-radius:0; background:#193820 url('/stadium/scout-stadium.webp') center center / 100% 100% no-repeat; box-shadow:none; }
+.squad-studio.ss-stadium .ss-stage:after { border:0; box-shadow:inset 0 -25px 60px #0006; z-index:0; }
+.squad-studio.ss-stadium .ss-stage-caption { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.squad-studio.ss-stadium .ss-turf-fallback { opacity:0; }
+.squad-studio.ss-stadium .ss-pitch-markings { stroke:#e8efd8; opacity:.38; stroke-width:1.7; }
+.squad-studio.ss-stadium .ss-position { width:var(--ss-stadium-card-width,112px); }
+.squad-studio.ss-stadium .ss-card { height:var(--ss-fit-card-height,142px); border:0; border-radius:0; background:none; box-shadow:none; }
+.squad-studio.ss-stadium .ss-card:before { display:none; }
+.squad-studio.ss-stadium .ss-card:hover, .squad-studio.ss-stadium .ss-card:focus-within, .squad-studio.ss-stadium .ss-card.selected { background:none; box-shadow:none; transform:translateY(-3px); }
+.squad-studio.ss-stadium .ss-position-banner { position:absolute; top:-18px; left:13%; right:13%; height:17px; display:flex; align-items:center; justify-content:center; background:#0b1a20dc; color:#a8f476; font-weight:600; font-size:13px; line-height:1; letter-spacing:.02em; box-shadow:0 2px 6px #0004; }
+.squad-studio.ss-stadium .ss-role-warning { top:10%; bottom:auto; left:auto; right:17%; width:11px; height:11px; line-height:11px; font-size:8px; z-index:4; }
+.squad-studio.ss-stadium .ss-drag-handle { top:13%; right:6%; }
+.squad-studio.ss-stadium .ss-card-actions { top:55%; left:-8%; right:-8%; border-color:#ceb16a; background:#101e23f5; }
+.squad-studio.ss-stadium .ss-card-actions button, .ss-stadium .ss-card-actions a { font-size:11px; min-height:30px; padding:3px 7px; }
+.squad-studio.ss-stadium .ss-link > line { stroke-width:3.1; opacity:.95; filter:drop-shadow(0 0 3px currentColor); }
+.squad-studio.ss-stadium .ss-link { color:#9ff179; }
+.squad-studio.ss-stadium .ss-link.yellow { color:#f5d875; }
+.squad-studio.ss-stadium .ss-link.red { color:#f78569; }
+.squad-studio.ss-stadium .ss-link.unknown { color:#c2cec7; }
+.squad-studio.ss-stadium .ss-link.dim { opacity:.25; }
+.squad-studio.ss-stadium .ss-planning-space { grid-column:1/-1; display:grid; grid-template-columns:minmax(0,1fr) 0px; gap:0; min-width:0; transition:grid-template-columns 240ms ease,gap 240ms ease; }
+.squad-studio.ss-stadium .ss-planning-space.bench-open { grid-template-columns:minmax(0,1fr) min(340px,34vw); column-gap:12px; }
+.squad-studio.ss-stadium .ss-planning-space .ss-pitch-scroll { grid-column:1; grid-row:1; min-width:0; }
+.squad-studio.ss-stadium .ss-planning-space .ss-selection-bar { grid-column:1; grid-row:2; }
+.squad-studio.ss-stadium .ss-bench { position:relative; inset:auto; grid-column:2; grid-row:1/span 2; width:100%; height:var(--ss-fit-height,calc(100svh - 135px)); max-height:none; min-width:0; margin:0; padding:14px; border:1px solid #3b474b; border-radius:3px; background:linear-gradient(145deg,#202c30,#111a20); box-shadow:inset 1px 0 0 #fff1; overflow:auto; animation:ss-rail-enter 220ms ease-out; }
+.squad-studio.ss-stadium .ss-bench > header { align-items:flex-start; gap:5px; }
+.squad-studio.ss-stadium .ss-bench h2 { font-size:18px; margin:0; }
+.squad-studio.ss-stadium .ss-bench h2 span { display:block; margin:3px 0 0; font-size:11px; }
+.squad-studio.ss-stadium .ss-bench-controls { display:grid; grid-template-columns:1fr; gap:8px; margin:16px 0 8px; }
+.squad-studio.ss-stadium .ss-bench-controls input, .squad-studio.ss-stadium .ss-bench-controls select { width:100%; min-width:0; }
+.squad-studio.ss-stadium .ss-bench-controls p { margin:0; }
+.squad-studio.ss-stadium .ss-bench-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 8px; }
+.squad-studio.ss-stadium .ss-bench .pc-face { height:180px; }
+.squad-studio.ss-stadium .ss-sub-preview { display:block; }
+.squad-studio.ss-stadium .ss-sub-buttons { margin:10px 0 0; flex-wrap:wrap; }
+@keyframes ss-rail-enter { from { opacity:0; transform:translateX(30px); } to { opacity:1; transform:none; } }
+.squad-studio.ss-stadium .ss-link-label { opacity:0; }
+.squad-studio.ss-stadium .ss-link:hover .ss-link-label, .squad-studio.ss-stadium .ss-link:focus-within .ss-link-label { opacity:1; }
+.squad-studio.ss-stadium .ss-pitch-footer { bottom:7px; left:16px; right:16px; font-size:8px; color:#dce4d4; text-shadow:0 1px 3px #000; }
+.squad-studio.ss-stadium .ss-footer { padding:4px 10px; font-size:9px; }
+.squad-studio.ss-stadium ::selection { background:#b39349; color:#fff; }
+.squad-studio.ss-stadium :focus-visible { outline-color:#fff2b4; }
+@media(min-width:1600px) { .squad-studio.ss-stadium main { grid-template-columns:minmax(420px,.7fr) minmax(0,1fr); }.squad-studio.ss-stadium .ss-toolbar button { padding-inline:13px; } }
+@media(max-width:1050px) and (min-width:761px) {
+ .squad-studio.ss-stadium main { grid-template-columns:minmax(210px,.45fr) minmax(0,1fr); column-gap:8px; }
+ .squad-studio.ss-stadium .ss-catalogue { display:none; }
+ .squad-studio.ss-stadium .ss-toolbar-end button span { display:none; }
+ .squad-studio.ss-stadium .ss-brand span { display:none; }
+}
+@media(max-width:760px) {
+ .squad-studio.ss-stadium .ss-header { height:44px; padding-inline:14px; gap:16px; }
+ .squad-studio.ss-stadium .ss-header nav { gap:16px; }
+ .squad-studio.ss-stadium .ss-brand span, .squad-studio.ss-stadium .ss-snapshot { display:none; }
+ .squad-studio.ss-stadium main { display:block; padding:0 8px; }
+ .squad-studio.ss-stadium .ss-titlebar { min-height:53px; padding:5px; }
+ .squad-studio.ss-stadium .ss-catalogue { gap:6px; }
+ .squad-studio.ss-stadium .ss-catalogue label { font-size:7px; }
+ .squad-studio.ss-stadium .ss-catalogue select { min-width:62px; max-width:72px; font-size:10px; }
+ .squad-studio.ss-stadium .ss-club-title h1 { font-size:19px; }
+ .squad-studio.ss-stadium .ss-club-title h1 span { font-size:14px; margin-left:4px; }
+ .squad-studio.ss-stadium .ss-toolbar { min-height:44px; flex-wrap:wrap; padding:3px 0; border-top:1px solid #26363e; }
+ .squad-studio.ss-stadium .ss-toolbar button { padding:5px 6px; min-height:38px; font-size:11px; }
+ .squad-studio.ss-stadium .ss-toolbar-end button span { display:none; }
+ .squad-studio.ss-stadium .ss-summary { padding:6px 4px; gap:15px; flex-wrap:wrap; }
+ .squad-studio.ss-stadium .ss-summary .ss-demo-notice { flex-basis:100%; margin-top:4px; }
+ .squad-studio.ss-stadium .ss-pan-hint { margin:4px 5px; font-size:10px; }
+ .squad-studio.ss-stadium .ss-pitch-scroll .ss-stage { min-width:650px; height:740px; min-height:740px; }
+ .squad-studio.ss-stadium .ss-position { width:112px; }
+ .squad-studio.ss-stadium .ss-card { height:145px; }
+ .squad-studio.ss-stadium .ss-position-banner { font-size:12px; }
+ .squad-studio.ss-stadium .ss-drag-handle { opacity:1; }
+ .squad-studio.ss-stadium .ss-planning-space { overflow-x:auto; }
+ .squad-studio.ss-stadium .ss-planning-space.bench-open { grid-template-columns:minmax(280px,1fr) 280px; }
+ .squad-studio.ss-stadium .ss-bench { height:740px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .squad-studio.ss-stadium .ss-card, .squad-studio.ss-stadium .ss-card:hover, .squad-studio.ss-stadium .ss-card:focus-within { transform:none; transition:none; }
+ .squad-studio.ss-stadium .ss-planning-space { transition:none; }
+ .squad-studio.ss-stadium .ss-bench { animation:none; }
+}

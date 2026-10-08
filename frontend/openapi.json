@@ -1,0 +1,4388 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Scout Recruitment API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health/live": {
+      "get": {
+        "summary": "Live",
+        "operationId": "live_health_live_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health/ready": {
+      "get": {
+        "summary": "Ready",
+        "operationId": "ready_health_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/datasets": {
+      "get": {
+        "summary": "Datasets",
+        "operationId": "datasets_datasets_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DatasetIndex"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/roles": {
+      "get": {
+        "summary": "Roles",
+        "operationId": "roles_roles_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RoleSpecification"
+                  },
+                  "type": "array",
+                  "title": "Response Roles Roles Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teams": {
+      "get": {
+        "summary": "Teams",
+        "operationId": "teams_teams_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Team"
+                  },
+                  "type": "array",
+                  "title": "Response Teams Teams Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/teams/{team_id}": {
+      "get": {
+        "summary": "Team",
+        "operationId": "team_teams__team_id__get",
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Team Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TeamDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/players": {
+      "get": {
+        "summary": "Players",
+        "operationId": "players_players_get",
+        "parameters": [
+          {
+            "name": "role",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Role"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Role"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 100,
+              "default": "",
+              "title": "Query"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 300,
+              "minimum": 1,
+              "default": 100,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PlayerStint"
+                  },
+                  "title": "Response Players Players Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/players/{player_id}": {
+      "get": {
+        "summary": "Player",
+        "operationId": "player_players__player_id__get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/recommendations": {
+      "post": {
+        "summary": "Recommendations",
+        "operationId": "recommendations_recommendations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecruitmentBrief"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecommendationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/briefs/interpret": {
+      "post": {
+        "summary": "Interpret Brief",
+        "operationId": "interpret_brief_briefs_interpret_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InterpretRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InterpretedBrief"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scenarios/simulate": {
+      "post": {
+        "summary": "Simulate",
+        "operationId": "simulate_scenarios_simulate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ScenarioRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScenarioResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads": {
+      "get": {
+        "summary": "Squads",
+        "operationId": "squads_squads_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SquadSummary"
+                  },
+                  "type": "array",
+                  "title": "Response Squads Squads Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads/{squad_id}": {
+      "get": {
+        "summary": "Squad",
+        "operationId": "squad_squads__squad_id__get",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Squad Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SquadSnapshot"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/formations": {
+      "get": {
+        "summary": "Formation Catalog",
+        "operationId": "formation_catalog_formations_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/FormationDefinition"
+                  },
+                  "type": "array",
+                  "title": "Response Formation Catalog Formations Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads/{squad_id}/players/{player_id}/abilities": {
+      "get": {
+        "summary": "Striker Abilities",
+        "operationId": "striker_abilities_squads__squad_id__players__player_id__abilities_get",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Squad Id"
+            }
+          },
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          },
+          {
+            "name": "position",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 10
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Position"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbilityProfile"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads/{squad_id}/position-ratings": {
+      "get": {
+        "summary": "Squad Position Ratings",
+        "operationId": "squad_position_ratings_squads__squad_id__position_ratings_get",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Squad Id"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Role"
+            }
+          },
+          {
+            "name": "multiplier",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "multipleOf": 0.1,
+              "maximum": 3,
+              "minimum": 1,
+              "default": 1.5,
+              "title": "Multiplier"
+            }
+          },
+          {
+            "name": "position",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 10
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Position"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/PlayerRating"
+                  },
+                  "title": "Response Squad Position Ratings Squads  Squad Id  Position Ratings Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads/{squad_id}/evaluate": {
+      "post": {
+        "summary": "Squad Evaluation",
+        "operationId": "squad_evaluation_squads__squad_id__evaluate_post",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Squad Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LineupState"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DashboardEvaluation"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/squads/{squad_id}/formation": {
+      "post": {
+        "summary": "Squad Formation",
+        "operationId": "squad_formation_squads__squad_id__formation_post",
+        "parameters": [
+          {
+            "name": "squad_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Squad Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FormationChange"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LineupState"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogue": {
+      "get": {
+        "summary": "Player Catalogue Metadata",
+        "operationId": "player_catalogue_metadata_catalogue_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerCatalogueMetadata"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogue/players": {
+      "get": {
+        "summary": "Player Catalogue",
+        "operationId": "player_catalogue_catalogue_players_get",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Name"
+            }
+          },
+          {
+            "name": "league",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 50
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "League"
+            }
+          },
+          {
+            "name": "team",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Team"
+            }
+          },
+          {
+            "name": "position",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 20
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Position"
+            }
+          },
+          {
+            "name": "minimum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Minimum"
+            }
+          },
+          {
+            "name": "maximum",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Maximum"
+            }
+          },
+          {
+            "name": "rating_status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "all",
+                "rated",
+                "unrated"
+              ],
+              "type": "string",
+              "default": "all",
+              "title": "Rating Status"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "name",
+                "rating"
+              ],
+              "type": "string",
+              "default": "name",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 60,
+              "minimum": 1,
+              "default": 24,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerCataloguePage"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogue/players/{identity}": {
+      "get": {
+        "summary": "Catalogue Player",
+        "operationId": "catalogue_player_catalogue_players__identity__get",
+        "parameters": [
+          {
+            "name": "identity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Identity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlayerCatalogueDetail"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/catalogue/players/{identity}/abilities": {
+      "get": {
+        "summary": "Catalogue Abilities",
+        "operationId": "catalogue_abilities_catalogue_players__identity__abilities_get",
+        "parameters": [
+          {
+            "name": "identity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Identity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbilityProfile"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/import": {
+      "get": {
+        "summary": "Evidence Import",
+        "operationId": "evidence_import_data_import_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/players": {
+      "get": {
+        "summary": "Evidence Players",
+        "operationId": "evidence_players_data_players_get",
+        "parameters": [
+          {
+            "name": "provider",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "opta",
+                    "pitchapi",
+                    "understat"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Provider"
+            }
+          },
+          {
+            "name": "league",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "England",
+                    "Spain",
+                    "Germany",
+                    "Italy",
+                    "France"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "League"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 100
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Name"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/players/{identity}/features": {
+      "get": {
+        "summary": "Evidence Features",
+        "operationId": "evidence_features_data_players__identity__features_get",
+        "parameters": [
+          {
+            "name": "identity",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Identity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AbilityProfile": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "position": {
+            "type": "string",
+            "title": "Position"
+          },
+          "primary_role_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Role Id"
+          },
+          "primary_rating": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Rating"
+          },
+          "primary_role_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Role Z"
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/RoleScore"
+            },
+            "type": "array",
+            "title": "Roles"
+          },
+          "hybrids": {
+            "items": {
+              "$ref": "#/components/schemas/RoleScore"
+            },
+            "type": "array",
+            "title": "Hybrids"
+          },
+          "versatility": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Versatility"
+          },
+          "versatility_components": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Versatility Components"
+          },
+          "minimum_minutes": {
+            "type": "integer",
+            "title": "Minimum Minutes",
+            "default": 900
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "competition": {
+            "type": "string",
+            "title": "Competition"
+          },
+          "minutes": {
+            "type": "number",
+            "title": "Minutes"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "observed",
+              "unavailable"
+            ],
+            "title": "Evidence"
+          },
+          "reference_population_id": {
+            "type": "string",
+            "title": "Reference Population Id"
+          },
+          "normalization_version": {
+            "type": "string",
+            "title": "Normalization Version"
+          },
+          "weighting_version": {
+            "type": "string",
+            "title": "Weighting Version"
+          },
+          "feature_version": {
+            "type": "string",
+            "title": "Feature Version"
+          },
+          "calculation_timestamp": {
+            "type": "string",
+            "title": "Calculation Timestamp"
+          },
+          "source_urls": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Source Urls"
+          },
+          "observed_through": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Through"
+          },
+          "retrieved_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retrieved At"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player_id",
+          "position",
+          "primary_role_id",
+          "primary_rating",
+          "primary_role_z",
+          "roles",
+          "season",
+          "competition",
+          "minutes",
+          "evidence",
+          "reference_population_id",
+          "normalization_version",
+          "weighting_version",
+          "feature_version",
+          "calculation_timestamp",
+          "limitations"
+        ],
+        "title": "AbilityProfile"
+      },
+      "AbilityScore": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw"
+          },
+          "z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Z"
+          },
+          "rating_unclipped": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating Unclipped"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "percentile": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentile"
+          },
+          "available": {
+            "type": "integer",
+            "title": "Available"
+          },
+          "defined": {
+            "type": "integer",
+            "title": "Defined"
+          },
+          "features": {
+            "items": {
+              "$ref": "#/components/schemas/FeatureDistribution"
+            },
+            "type": "array",
+            "title": "Features"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "raw",
+          "z",
+          "rating_unclipped",
+          "rating",
+          "percentile",
+          "available",
+          "defined",
+          "features"
+        ],
+        "title": "AbilityScore"
+      },
+      "CardAbility": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "abbreviation": {
+            "type": "string",
+            "title": "Abbreviation"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "available": {
+            "type": "integer",
+            "title": "Available"
+          },
+          "defined": {
+            "type": "integer",
+            "title": "Defined"
+          },
+          "peer_count": {
+            "type": "integer",
+            "title": "Peer Count",
+            "default": 0
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "abbreviation",
+          "rating",
+          "available",
+          "defined"
+        ],
+        "title": "CardAbility"
+      },
+      "CatalogueFeature": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "provider": {
+            "type": "string",
+            "title": "Provider"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denominator"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "measurement_version": {
+            "type": "string",
+            "title": "Measurement Version"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "value",
+          "unit",
+          "status",
+          "provider",
+          "numerator",
+          "denominator",
+          "source_url",
+          "measurement_version"
+        ],
+        "title": "CatalogueFeature"
+      },
+      "ChemistryComponent": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 10.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "explanation": {
+            "type": "string",
+            "title": "Explanation"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "unavailable"
+            ],
+            "title": "Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "score",
+          "explanation",
+          "evidence"
+        ],
+        "title": "ChemistryComponent"
+      },
+      "ChemistryEdge": {
+        "properties": {
+          "slot_a": {
+            "type": "string",
+            "title": "Slot A"
+          },
+          "slot_b": {
+            "type": "string",
+            "title": "Slot B"
+          },
+          "chemistry": {
+            "$ref": "#/components/schemas/ChemistryResult"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "slot_a",
+          "slot_b",
+          "chemistry"
+        ],
+        "title": "ChemistryEdge"
+      },
+      "ChemistryResult": {
+        "properties": {
+          "player_a": {
+            "type": "string",
+            "title": "Player A"
+          },
+          "player_b": {
+            "type": "string",
+            "title": "Player B"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 10.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "band": {
+            "type": "string",
+            "enum": [
+              "red",
+              "yellow",
+              "green",
+              "unknown"
+            ],
+            "title": "Band"
+          },
+          "available": {
+            "type": "integer",
+            "title": "Available"
+          },
+          "defined": {
+            "type": "integer",
+            "title": "Defined",
+            "default": 5
+          },
+          "components": {
+            "items": {
+              "$ref": "#/components/schemas/ChemistryComponent"
+            },
+            "type": "array",
+            "title": "Components"
+          },
+          "evidence": {
+            "type": "string",
+            "const": "synthetic",
+            "title": "Evidence",
+            "default": "synthetic"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player_a",
+          "player_b",
+          "score",
+          "band",
+          "available",
+          "components"
+        ],
+        "title": "ChemistryResult"
+      },
+      "DashboardEvaluation": {
+        "properties": {
+          "lineup": {
+            "$ref": "#/components/schemas/LineupState"
+          },
+          "ratings": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PlayerRating"
+            },
+            "type": "object",
+            "title": "Ratings"
+          },
+          "edges": {
+            "items": {
+              "$ref": "#/components/schemas/ChemistryEdge"
+            },
+            "type": "array",
+            "title": "Edges"
+          },
+          "team_rating": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Rating"
+          },
+          "team_chemistry": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Chemistry"
+          },
+          "chemistry_scored_links": {
+            "type": "integer",
+            "title": "Chemistry Scored Links"
+          },
+          "chemistry_total_links": {
+            "type": "integer",
+            "title": "Chemistry Total Links"
+          },
+          "completeness": {
+            "type": "integer",
+            "title": "Completeness"
+          },
+          "reserve_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reserve Ids"
+          },
+          "feature_version": {
+            "type": "string",
+            "title": "Feature Version"
+          },
+          "peer_version": {
+            "type": "string",
+            "title": "Peer Version"
+          },
+          "rating_version": {
+            "type": "string",
+            "title": "Rating Version"
+          },
+          "chemistry_version": {
+            "type": "string",
+            "title": "Chemistry Version"
+          },
+          "evidence": {
+            "type": "string",
+            "const": "synthetic",
+            "title": "Evidence",
+            "default": "synthetic"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "lineup",
+          "ratings",
+          "edges",
+          "team_chemistry",
+          "chemistry_scored_links",
+          "chemistry_total_links",
+          "completeness",
+          "reserve_ids",
+          "feature_version",
+          "peer_version",
+          "rating_version",
+          "chemistry_version",
+          "warnings"
+        ],
+        "title": "DashboardEvaluation"
+      },
+      "DatasetIndex": {
+        "properties": {
+          "active": {
+            "$ref": "#/components/schemas/DatasetRelease"
+          },
+          "releases": {
+            "items": {
+              "$ref": "#/components/schemas/DatasetRelease"
+            },
+            "type": "array",
+            "title": "Releases"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "active",
+          "releases"
+        ],
+        "title": "DatasetIndex"
+      },
+      "DatasetRelease": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "real",
+              "historical"
+            ],
+            "title": "Kind"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "leagues": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Leagues"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "feature_version": {
+            "type": "string",
+            "title": "Feature Version",
+            "default": "role-features-v1"
+          },
+          "scoring_version": {
+            "type": "string",
+            "title": "Scoring Version",
+            "default": "evidence-ranking-v1"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version",
+            "default": "shrunk-role-baseline-v1"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          },
+          "publication_approved": {
+            "type": "boolean",
+            "title": "Publication Approved",
+            "default": false
+          },
+          "publication_evidence": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publication Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "season",
+          "leagues",
+          "source",
+          "limitations"
+        ],
+        "title": "DatasetRelease"
+      },
+      "Evidence": {
+        "type": "string",
+        "enum": [
+          "observed",
+          "inferred",
+          "manual",
+          "synthetic",
+          "unavailable"
+        ],
+        "title": "Evidence"
+      },
+      "FeatureDistribution": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "direction": {
+            "type": "integer",
+            "title": "Direction"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          },
+          "base_weight": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Weight"
+          },
+          "evidence_status": {
+            "type": "string",
+            "title": "Evidence Status",
+            "default": "observed"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "stabilized_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stabilized Value"
+          },
+          "peer_mean": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Peer Mean"
+          },
+          "z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Z"
+          },
+          "percentile": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentile"
+          },
+          "reliability": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reliability"
+          },
+          "peer_count": {
+            "type": "integer",
+            "title": "Peer Count"
+          },
+          "density": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Density"
+          },
+          "quantiles": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Quantiles"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "unit",
+          "direction",
+          "weight",
+          "value",
+          "stabilized_value",
+          "peer_mean",
+          "z",
+          "percentile",
+          "reliability",
+          "peer_count",
+          "density",
+          "quantiles"
+        ],
+        "title": "FeatureDistribution"
+      },
+      "FormationChange": {
+        "properties": {
+          "lineup": {
+            "$ref": "#/components/schemas/LineupState"
+          },
+          "formation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Formation Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "lineup",
+          "formation_id"
+        ],
+        "title": "FormationChange"
+      },
+      "FormationDefinition": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "slots": {
+            "items": {
+              "$ref": "#/components/schemas/FormationSlot"
+            },
+            "type": "array",
+            "title": "Slots"
+          },
+          "edges": {
+            "items": {
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "array",
+            "title": "Edges"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "slots",
+          "edges"
+        ],
+        "title": "FormationDefinition"
+      },
+      "FormationSlot": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "side": {
+            "type": "string",
+            "enum": [
+              "left",
+              "centre",
+              "right"
+            ],
+            "title": "Side"
+          },
+          "row": {
+            "type": "integer",
+            "title": "Row"
+          },
+          "x": {
+            "type": "number",
+            "title": "X"
+          },
+          "y": {
+            "type": "number",
+            "title": "Y"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "role",
+          "side",
+          "row",
+          "x",
+          "y"
+        ],
+        "title": "FormationSlot"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HardConstraints": {
+        "properties": {
+          "min_age": {
+            "type": "integer",
+            "maximum": 55.0,
+            "minimum": 15.0,
+            "title": "Min Age",
+            "default": 15
+          },
+          "max_age": {
+            "type": "integer",
+            "maximum": 55.0,
+            "minimum": 15.0,
+            "title": "Max Age",
+            "default": 40
+          },
+          "min_minutes": {
+            "type": "integer",
+            "maximum": 15000.0,
+            "minimum": 0.0,
+            "title": "Min Minutes",
+            "default": 450
+          },
+          "foot": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "both"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Foot"
+          },
+          "attributes": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "athletic",
+                "high_line",
+                "receives_under_pressure"
+              ]
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Attributes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "HardConstraints"
+      },
+      "InterpretRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 3000,
+            "minLength": 3,
+            "title": "Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "InterpretRequest"
+      },
+      "InterpretedBrief": {
+        "properties": {
+          "brief": {
+            "$ref": "#/components/schemas/RecruitmentBrief"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "structured_rules",
+              "ollama"
+            ],
+            "title": "Method"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "brief",
+          "method",
+          "warnings"
+        ],
+        "title": "InterpretedBrief"
+      },
+      "LineupState": {
+        "properties": {
+          "snapshot_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Snapshot Id"
+          },
+          "formation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Formation Id",
+            "default": "4-3-3"
+          },
+          "assignments": {
+            "patternProperties": {
+              "^[A-Za-z0-9_-]{1,100}$": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9_-]{1,100}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "type": "object",
+            "maxProperties": 11,
+            "title": "Assignments"
+          },
+          "bench": {
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,100}$"
+            },
+            "type": "array",
+            "maxItems": 9,
+            "title": "Bench"
+          },
+          "role_multiplier": {
+            "type": "number",
+            "multipleOf": 0.1,
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "title": "Role Multiplier",
+            "default": 1.5
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "snapshot_id",
+          "assignments"
+        ],
+        "title": "LineupState"
+      },
+      "MetricObservation": {
+        "properties": {
+          "value": {
+            "type": "number",
+            "title": "Value"
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "per90",
+              "ratio",
+              "scalar"
+            ],
+            "title": "Unit",
+            "default": "per90"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Evidence",
+            "default": "observed"
+          },
+          "numerator": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Numerator"
+          },
+          "denominator": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Denominator"
+          },
+          "source_field": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Field"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "value"
+        ],
+        "title": "MetricObservation"
+      },
+      "PlayerCardData": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "short_name": {
+            "type": "string",
+            "title": "Short Name"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "team": {
+            "type": "string",
+            "title": "Team"
+          },
+          "position": {
+            "type": "string",
+            "title": "Position"
+          },
+          "minutes": {
+            "type": "number",
+            "title": "Minutes"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season",
+            "default": "2025/26"
+          },
+          "overall": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Overall"
+          },
+          "abilities": {
+            "items": {
+              "$ref": "#/components/schemas/CardAbility"
+            },
+            "type": "array",
+            "title": "Abilities"
+          },
+          "country_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country Label"
+          },
+          "club_logo_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Club Logo Url"
+          },
+          "portrait_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portrait Url"
+          },
+          "portrait_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portrait Source"
+          },
+          "mapping_status": {
+            "type": "string",
+            "title": "Mapping Status"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "unavailable"
+            ],
+            "title": "Evidence",
+            "default": "observed"
+          },
+          "numerical_features": {
+            "type": "integer",
+            "title": "Numerical Features"
+          },
+          "supported_features": {
+            "type": "integer",
+            "title": "Supported Features"
+          },
+          "defined_features": {
+            "type": "integer",
+            "title": "Defined Features",
+            "default": 36
+          },
+          "rating_status": {
+            "type": "string",
+            "title": "Rating Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "short_name",
+          "league",
+          "team",
+          "position",
+          "minutes",
+          "overall",
+          "abilities",
+          "mapping_status",
+          "numerical_features",
+          "supported_features",
+          "rating_status"
+        ],
+        "title": "PlayerCardData"
+      },
+      "PlayerCatalogueDetail": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "short_name": {
+            "type": "string",
+            "title": "Short Name"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "team": {
+            "type": "string",
+            "title": "Team"
+          },
+          "position": {
+            "type": "string",
+            "title": "Position"
+          },
+          "minutes": {
+            "type": "number",
+            "title": "Minutes"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season",
+            "default": "2025/26"
+          },
+          "overall": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Overall"
+          },
+          "abilities": {
+            "items": {
+              "$ref": "#/components/schemas/CardAbility"
+            },
+            "type": "array",
+            "title": "Abilities"
+          },
+          "country_label": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country Label"
+          },
+          "club_logo_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Club Logo Url"
+          },
+          "portrait_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portrait Url"
+          },
+          "portrait_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portrait Source"
+          },
+          "mapping_status": {
+            "type": "string",
+            "title": "Mapping Status"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "observed",
+              "unavailable"
+            ],
+            "title": "Evidence",
+            "default": "observed"
+          },
+          "numerical_features": {
+            "type": "integer",
+            "title": "Numerical Features"
+          },
+          "supported_features": {
+            "type": "integer",
+            "title": "Supported Features"
+          },
+          "defined_features": {
+            "type": "integer",
+            "title": "Defined Features",
+            "default": 36
+          },
+          "rating_status": {
+            "type": "string",
+            "title": "Rating Status"
+          },
+          "catalogue_id": {
+            "type": "string",
+            "title": "Catalogue Id"
+          },
+          "features": {
+            "items": {
+              "$ref": "#/components/schemas/CatalogueFeature"
+            },
+            "type": "array",
+            "title": "Features"
+          },
+          "sources": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "short_name",
+          "league",
+          "team",
+          "position",
+          "minutes",
+          "overall",
+          "abilities",
+          "mapping_status",
+          "numerical_features",
+          "supported_features",
+          "rating_status",
+          "catalogue_id",
+          "features",
+          "sources",
+          "limitations"
+        ],
+        "title": "PlayerCatalogueDetail"
+      },
+      "PlayerCatalogueMetadata": {
+        "properties": {
+          "catalogue_id": {
+            "type": "string",
+            "title": "Catalogue Id"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "leagues": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Leagues"
+          },
+          "teams": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Teams"
+          },
+          "positions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Positions"
+          },
+          "squad_mappings": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Squad Mappings"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "catalogue_id",
+          "total",
+          "leagues",
+          "teams",
+          "positions",
+          "squad_mappings",
+          "limitations"
+        ],
+        "title": "PlayerCatalogueMetadata"
+      },
+      "PlayerCataloguePage": {
+        "properties": {
+          "catalogue_id": {
+            "type": "string",
+            "title": "Catalogue Id"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerCardData"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "catalogue_id",
+          "total",
+          "offset",
+          "limit",
+          "items"
+        ],
+        "title": "PlayerCataloguePage"
+      },
+      "PlayerDetail": {
+        "properties": {
+          "player": {
+            "$ref": "#/components/schemas/PlayerStint"
+          },
+          "profiles": {
+            "items": {
+              "$ref": "#/components/schemas/RoleProfile"
+            },
+            "type": "array",
+            "title": "Profiles"
+          },
+          "release": {
+            "$ref": "#/components/schemas/DatasetRelease"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player",
+          "profiles",
+          "release"
+        ],
+        "title": "PlayerDetail"
+      },
+      "PlayerRating": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "normal_role_score": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Normal Role Score"
+          },
+          "coverage": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Coverage"
+          },
+          "role_coverage": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Role Coverage"
+          },
+          "available": {
+            "type": "integer",
+            "title": "Available"
+          },
+          "defined": {
+            "type": "integer",
+            "title": "Defined"
+          },
+          "total_weight": {
+            "type": "number",
+            "title": "Total Weight"
+          },
+          "skills": {
+            "items": {
+              "$ref": "#/components/schemas/SkillContribution"
+            },
+            "type": "array",
+            "title": "Skills"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          },
+          "role_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Z"
+          },
+          "rating_unclipped": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating Unclipped"
+          },
+          "percentile": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentile"
+          },
+          "primary_role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Role"
+          },
+          "role_scores": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Role Scores"
+          },
+          "normalization_version": {
+            "type": "string",
+            "title": "Normalization Version",
+            "default": "magnitude-base50-no-upper-cap-v2"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "observed",
+              "unavailable"
+            ],
+            "title": "Evidence",
+            "default": "synthetic"
+          },
+          "ability_scores": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Ability Scores"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player_id",
+          "role",
+          "coverage",
+          "role_coverage",
+          "available",
+          "defined",
+          "total_weight",
+          "skills",
+          "warnings"
+        ],
+        "title": "PlayerRating"
+      },
+      "PlayerStint": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 150,
+            "minLength": 1,
+            "title": "Name"
+          },
+          "team_id": {
+            "type": "string",
+            "title": "Team Id"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "age": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 55.0,
+                "minimum": 15.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Age"
+          },
+          "foot": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "left",
+                  "right",
+                  "both"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Foot"
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "type": "array",
+            "maxItems": 8,
+            "minItems": 1,
+            "title": "Roles"
+          },
+          "role_evidence": {
+            "$ref": "#/components/schemas/Evidence"
+          },
+          "minutes": {
+            "type": "integer",
+            "maximum": 15000.0,
+            "minimum": 0.0,
+            "title": "Minutes"
+          },
+          "metrics": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/MetricObservation"
+            },
+            "type": "object",
+            "title": "Metrics"
+          },
+          "attributes": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Attributes"
+          },
+          "attribute_evidence": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Evidence"
+            },
+            "type": "object",
+            "title": "Attribute Evidence"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "player_id",
+          "name",
+          "team_id",
+          "league",
+          "season",
+          "roles",
+          "role_evidence",
+          "minutes",
+          "metrics"
+        ],
+        "title": "PlayerStint"
+      },
+      "Recommendation": {
+        "properties": {
+          "player": {
+            "$ref": "#/components/schemas/PlayerStint"
+          },
+          "score": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Score"
+          },
+          "components": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "maximum": 100.0,
+                  "minimum": 0.0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Components"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "eligible",
+              "verification_required",
+              "insufficient_evidence"
+            ],
+            "title": "Status"
+          },
+          "reasons": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Reasons"
+          },
+          "unknowns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unknowns"
+          },
+          "profile": {
+            "$ref": "#/components/schemas/RoleProfile"
+          },
+          "replacement_changes": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Replacement Changes"
+          },
+          "replacement_functions": {
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "preserved",
+                "improved",
+                "compromised",
+                "redistributed"
+              ]
+            },
+            "type": "object",
+            "title": "Replacement Functions"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player",
+          "score",
+          "components",
+          "status",
+          "reasons",
+          "unknowns",
+          "profile",
+          "replacement_changes"
+        ],
+        "title": "Recommendation"
+      },
+      "RecommendationResult": {
+        "properties": {
+          "release": {
+            "$ref": "#/components/schemas/DatasetRelease"
+          },
+          "brief": {
+            "$ref": "#/components/schemas/RecruitmentBrief"
+          },
+          "recommendations": {
+            "items": {
+              "$ref": "#/components/schemas/Recommendation"
+            },
+            "type": "array",
+            "title": "Recommendations"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "release",
+          "brief",
+          "recommendations",
+          "limitations"
+        ],
+        "title": "RecommendationResult"
+      },
+      "RecruitmentBrief": {
+        "properties": {
+          "role": {
+            "$ref": "#/components/schemas/Role",
+            "default": "CB"
+          },
+          "team_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Team Id"
+          },
+          "replacement_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Replacement Id"
+          },
+          "intended_style": {
+            "additionalProperties": {
+              "type": "number",
+              "maximum": 10000.0,
+              "minimum": 0.0
+            },
+            "type": "object",
+            "maxProperties": 30,
+            "title": "Intended Style"
+          },
+          "constraints": {
+            "$ref": "#/components/schemas/HardConstraints"
+          },
+          "preferences": {
+            "additionalProperties": {
+              "type": "number",
+              "maximum": 5.0,
+              "minimum": 0.0
+            },
+            "type": "object",
+            "maxProperties": 30,
+            "title": "Preferences"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number",
+              "maximum": 5.0,
+              "minimum": 0.0
+            },
+            "propertyNames": {
+              "enum": [
+                "similarity",
+                "quality",
+                "tactical_fit",
+                "replacement_fit",
+                "coverage"
+              ]
+            },
+            "type": "object",
+            "title": "Weights"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "default": 20
+          },
+          "include_verification_required": {
+            "type": "boolean",
+            "title": "Include Verification Required",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "RecruitmentBrief"
+      },
+      "Role": {
+        "type": "string",
+        "enum": [
+          "GK",
+          "CB",
+          "FB/WB",
+          "DM",
+          "CM",
+          "AM",
+          "W",
+          "ST"
+        ],
+        "title": "Role"
+      },
+      "RoleProfile": {
+        "properties": {
+          "player_stint_id": {
+            "type": "string",
+            "title": "Player Stint Id"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "values": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Values"
+          },
+          "percentiles": {
+            "additionalProperties": {
+              "type": "number",
+              "maximum": 100.0,
+              "minimum": 0.0
+            },
+            "type": "object",
+            "title": "Percentiles"
+          },
+          "intervals": {
+            "additionalProperties": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "type": "object",
+            "title": "Intervals"
+          },
+          "coverage": {
+            "type": "number",
+            "maximum": 100.0,
+            "minimum": 0.0,
+            "title": "Coverage"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player_stint_id",
+          "role",
+          "values",
+          "percentiles",
+          "intervals",
+          "coverage"
+        ],
+        "title": "RoleProfile"
+      },
+      "RoleScore": {
+        "properties": {
+          "role_id": {
+            "type": "string",
+            "title": "Role Id"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "role_composite_raw": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Composite Raw"
+          },
+          "role_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Role Z"
+          },
+          "rating_unclipped": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating Unclipped"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "percentile": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentile"
+          },
+          "rank": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rank"
+          },
+          "population_size": {
+            "type": "integer",
+            "title": "Population Size"
+          },
+          "gap_to_next_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gap To Next Z"
+          },
+          "gap_to_previous_z": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gap To Previous Z"
+          },
+          "abilities": {
+            "items": {
+              "$ref": "#/components/schemas/AbilityScore"
+            },
+            "type": "array",
+            "title": "Abilities"
+          },
+          "weights": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Weights"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "role_id",
+          "label",
+          "role_composite_raw",
+          "role_z",
+          "rating_unclipped",
+          "rating",
+          "percentile",
+          "rank",
+          "population_size",
+          "gap_to_next_z",
+          "gap_to_previous_z",
+          "abilities",
+          "weights"
+        ],
+        "title": "RoleScore"
+      },
+      "RoleSpecification": {
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/Role"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "style_metrics": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Style Metrics"
+          },
+          "quality_metrics": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Quality Metrics"
+          },
+          "metric_labels": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Metric Labels"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "style_metrics",
+          "quality_metrics",
+          "metric_labels"
+        ],
+        "title": "RoleSpecification"
+      },
+      "ScenarioRequest": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "team_id": {
+            "type": "string",
+            "title": "Team Id"
+          },
+          "season_minutes": {
+            "type": "integer",
+            "maximum": 4500.0,
+            "minimum": 0.0,
+            "title": "Season Minutes",
+            "default": 2400
+          },
+          "adaptation_mean": {
+            "type": "number",
+            "maximum": 1.5,
+            "minimum": 0.1,
+            "title": "Adaptation Mean",
+            "default": 0.9
+          },
+          "adaptation_sd": {
+            "type": "number",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "title": "Adaptation Sd",
+            "default": 0.12
+          },
+          "availability_mean": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Availability Mean",
+            "default": 0.85
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 4294967295.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 42
+          },
+          "samples": {
+            "type": "integer",
+            "maximum": 10000.0,
+            "minimum": 200.0,
+            "title": "Samples",
+            "default": 2000
+          },
+          "assignments": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "type": "object",
+            "maxProperties": 30,
+            "title": "Assignments"
+          },
+          "fees": {
+            "additionalProperties": {
+              "type": "number",
+              "maximum": 1000000000.0,
+              "minimum": 0.0
+            },
+            "type": "object",
+            "title": "Fees"
+          },
+          "budget": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 10000000000.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Budget"
+          },
+          "role_requirements": {
+            "additionalProperties": {
+              "type": "integer",
+              "maximum": 10.0,
+              "minimum": 0.0
+            },
+            "propertyNames": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "type": "object",
+            "maxProperties": 8,
+            "title": "Role Requirements"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "player_id",
+          "team_id"
+        ],
+        "title": "ScenarioRequest"
+      },
+      "ScenarioResult": {
+        "properties": {
+          "release": {
+            "$ref": "#/components/schemas/DatasetRelease"
+          },
+          "request": {
+            "$ref": "#/components/schemas/ScenarioRequest"
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "assumptions": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Assumptions"
+          },
+          "minutes_interval": {
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array",
+            "maxItems": 3,
+            "minItems": 3,
+            "title": "Minutes Interval"
+          },
+          "outcomes": {
+            "additionalProperties": {
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array",
+              "maxItems": 3,
+              "minItems": 3
+            },
+            "type": "object",
+            "title": "Outcomes"
+          },
+          "squad_coverage": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Squad Coverage"
+          },
+          "squad_gaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Squad Gaps"
+          },
+          "total_fee": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Fee"
+          },
+          "budget_satisfied": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Budget Satisfied"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "release",
+          "request",
+          "seed",
+          "assumptions",
+          "minutes_interval",
+          "outcomes",
+          "squad_coverage",
+          "squad_gaps",
+          "total_fee",
+          "budget_satisfied",
+          "limitations"
+        ],
+        "title": "ScenarioResult"
+      },
+      "SkillContribution": {
+        "properties": {
+          "skill": {
+            "$ref": "#/components/schemas/SkillEvidence"
+          },
+          "emphasized": {
+            "type": "boolean",
+            "title": "Emphasized"
+          },
+          "weight": {
+            "type": "number",
+            "title": "Weight"
+          },
+          "contribution": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contribution"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "skill",
+          "emphasized",
+          "weight",
+          "contribution"
+        ],
+        "title": "SkillContribution"
+      },
+      "SkillEvidence": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "raw_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Raw Value"
+          },
+          "unit": {
+            "type": "string",
+            "title": "Unit"
+          },
+          "percentile": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Percentile"
+          },
+          "peer_count": {
+            "type": "integer",
+            "title": "Peer Count"
+          },
+          "lower_is_better": {
+            "type": "boolean",
+            "title": "Lower Is Better"
+          },
+          "evidence": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "observed",
+              "unavailable"
+            ],
+            "title": "Evidence",
+            "default": "synthetic"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "raw_value",
+          "unit",
+          "percentile",
+          "peer_count",
+          "lower_is_better"
+        ],
+        "title": "SkillEvidence"
+      },
+      "SquadPlayer": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "short_name": {
+            "type": "string",
+            "title": "Short Name"
+          },
+          "number": {
+            "type": "integer",
+            "title": "Number"
+          },
+          "country_label": {
+            "type": "string",
+            "title": "Country Label"
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Goalkeeper",
+              "Defender",
+              "Midfielder",
+              "Forward"
+            ],
+            "title": "Category"
+          },
+          "roles": {
+            "items": {
+              "$ref": "#/components/schemas/Role"
+            },
+            "type": "array",
+            "title": "Roles"
+          },
+          "planning_side": {
+            "type": "string",
+            "enum": [
+              "left",
+              "centre",
+              "right"
+            ],
+            "title": "Planning Side"
+          },
+          "identity_evidence": {
+            "type": "string",
+            "const": "observed",
+            "title": "Identity Evidence",
+            "default": "observed"
+          },
+          "role_evidence": {
+            "type": "string",
+            "const": "manual",
+            "title": "Role Evidence",
+            "default": "manual"
+          },
+          "source_url": {
+            "type": "string",
+            "title": "Source Url"
+          },
+          "skills": {
+            "items": {
+              "$ref": "#/components/schemas/SkillEvidence"
+            },
+            "type": "array",
+            "title": "Skills"
+          },
+          "club_logo_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Club Logo Url"
+          },
+          "portrait_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portrait Url"
+          },
+          "catalogue_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Catalogue Id"
+          },
+          "attribute_evidence": {
+            "type": "string",
+            "enum": [
+              "synthetic",
+              "observed",
+              "unavailable"
+            ],
+            "title": "Attribute Evidence",
+            "default": "synthetic"
+          },
+          "performance_season": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Performance Season"
+          },
+          "ability_scores": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Ability Scores"
+          },
+          "mapping_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mapping Status"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "short_name",
+          "number",
+          "country_label",
+          "category",
+          "roles",
+          "planning_side",
+          "source_url",
+          "skills"
+        ],
+        "title": "SquadPlayer"
+      },
+      "SquadSnapshot": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "team": {
+            "type": "string",
+            "title": "Team"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "snapshot_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot Date"
+          },
+          "snapshot_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Snapshot Id"
+          },
+          "players": {
+            "items": {
+              "$ref": "#/components/schemas/SquadPlayer"
+            },
+            "type": "array",
+            "title": "Players"
+          },
+          "default_lineup": {
+            "$ref": "#/components/schemas/LineupState"
+          },
+          "sources": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Sources"
+          },
+          "feature_version": {
+            "type": "string",
+            "title": "Feature Version"
+          },
+          "peer_version": {
+            "type": "string",
+            "title": "Peer Version"
+          },
+          "club_logo_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Club Logo Url"
+          },
+          "rating_version": {
+            "type": "string",
+            "title": "Rating Version"
+          },
+          "chemistry_version": {
+            "type": "string",
+            "title": "Chemistry Version"
+          },
+          "peer_counts": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Peer Counts"
+          },
+          "observation_window": {
+            "type": "string",
+            "title": "Observation Window"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Limitations"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "team",
+          "league",
+          "season",
+          "snapshot_date",
+          "snapshot_id",
+          "players",
+          "default_lineup",
+          "sources",
+          "feature_version",
+          "peer_version",
+          "rating_version",
+          "chemistry_version",
+          "peer_counts",
+          "observation_window",
+          "limitations"
+        ],
+        "title": "SquadSnapshot"
+      },
+      "SquadSummary": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Id"
+          },
+          "team": {
+            "type": "string",
+            "title": "Team"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "season": {
+            "type": "string",
+            "title": "Season"
+          },
+          "snapshot_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Snapshot Date"
+          },
+          "snapshot_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,100}$",
+            "title": "Snapshot Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "team",
+          "league",
+          "season",
+          "snapshot_date",
+          "snapshot_id"
+        ],
+        "title": "SquadSummary"
+      },
+      "Team": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "league": {
+            "type": "string",
+            "title": "League"
+          },
+          "style_targets": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Style Targets"
+          },
+          "style_evidence": {
+            "$ref": "#/components/schemas/Evidence",
+            "default": "unavailable"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "league"
+        ],
+        "title": "Team"
+      },
+      "TeamDetail": {
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "players": {
+            "items": {
+              "$ref": "#/components/schemas/PlayerStint"
+            },
+            "type": "array",
+            "title": "Players"
+          },
+          "release": {
+            "$ref": "#/components/schemas/DatasetRelease"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "team",
+          "players",
+          "release"
+        ],
+        "title": "TeamDetail"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
